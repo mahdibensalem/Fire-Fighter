@@ -1,0 +1,87 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class Controller : MonoBehaviour
+{
+    public GameObject[] lvlGO;
+    [SerializeField] public int _lvlInlocked;
+    Touch touch;
+    [SerializeField] float slideSpeed;
+    [SerializeField] Vector3 camPos;
+    [SerializeField] bool canSelect=true;
+  [SerializeField]  GameObject objectSelected;
+    [SerializeField] float MinPos, MaxPos;
+    [SerializeField] Material green, Black,yellow;
+    private void Awake()
+    {
+        camPos = transform.position;
+        int lvlInlocked = PlayerPrefs.GetInt("LVL");
+        for (int i = 0; i < lvlGO.Length; i++)
+        {
+            Debug.Log(i);
+            disableLVL(lvlGO[i]);
+        }
+        for (int j = 0; j < lvlInlocked; j++)
+        {
+            LVLActive(lvlGO[j]);
+        }
+        LVLActive(lvlGO[0]);
+    }
+    void disableLVL(GameObject lvlGO)
+    {
+
+        lvlGO.GetComponent<Collider>().enabled = false;
+        lvlGO.GetComponentInChildren<Renderer>().material = Black;
+    }
+    void LVLActive(GameObject lvlGO)
+    {
+
+        lvlGO.GetComponent<Collider>().enabled = true;
+        lvlGO.GetComponentInChildren<Renderer>().material=yellow;
+    }
+    void FixedUpdate()
+    {
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                //Debug.Log("aezr");
+                canSelect = true;
+                if (Physics.Raycast(ray, out RaycastHit hit))
+                {
+
+                    if (hit.collider.gameObject.CompareTag("LVL"))
+                    {
+                        objectSelected = hit.collider.gameObject;
+                        objectSelected.GetComponentInChildren<Renderer>().material=green;
+                    }
+                    else canSelect = false;
+                }
+            }
+            else
+            if (touch.phase == TouchPhase.Moved)
+            {
+                camPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - (slideSpeed  * touch.deltaPosition.y));
+                canSelect = false;
+                if(objectSelected!=null)
+                objectSelected.GetComponentInChildren<Renderer>().material = yellow;
+            }
+            else if (touch.phase == TouchPhase.Ended && canSelect)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit))
+                {
+                    if (hit.collider.CompareTag("LVL"))
+                    {
+                        SceneManager.LoadScene(int.Parse(hit.collider.name));
+                    }
+                }
+            }
+        }
+        transform.position = Vector3.Lerp(transform.position, camPos, Time.fixedDeltaTime );
+        transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z, MinPos, MaxPos));
+    }
+}
