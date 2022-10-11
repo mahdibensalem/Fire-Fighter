@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.UI;
+using Cinemachine;
 public class PlayerCNTRL : MonoBehaviour
 {
+    [SerializeField] float queuJump = 0.5f;
+    [SerializeField] bool readyToJump = false;
 
     [Header("controller")]
     public static PlayerCNTRL Instance;
@@ -55,17 +56,18 @@ public class PlayerCNTRL : MonoBehaviour
     public RuntimeAnimatorController anim1;
     public Avatar avatar;
     GameObject thisSkin;
+    public CinemachineVirtualCamera vCam;
     private void Awake()
     {
         Instance = this;
         controller = GetComponent<CharacterController>();
         _speedMoveX = 0;
-        
+
         thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
 
         if (!thisSkin.GetComponent<Animator>())
             anim = thisSkin.AddComponent<Animator>();
-        
+
         thisSkin.GetComponent<Animator>().runtimeAnimatorController = anim1;
         anim.avatar = avatar;
     }
@@ -78,7 +80,7 @@ public class PlayerCNTRL : MonoBehaviour
     }
     public void SwipeDetector_OnSwipe(SwipeData SD)
     {
-        if (SD.Direction == SwipeDirection.Right )
+        if (SD.Direction == SwipeDirection.Right)
         {
             if (canMoveRight)
             {
@@ -118,12 +120,17 @@ public class PlayerCNTRL : MonoBehaviour
         }
         if (SD.Direction == SwipeDirection.Up)
         {
-            if (!isGrounded) return;
-            if (m_sliding)
+            if (!isGrounded)
             {
+                readyToJump = true;
+                return;
+            }
+
+           else if (m_sliding)
+           {
 
                 StopSlide();
-            }
+           }
             Jump();
 
         }
@@ -148,7 +155,7 @@ public class PlayerCNTRL : MonoBehaviour
         {
             direction.y = Gravity * Time.deltaTime;
         }
-        if(!isGrounded)
+        if (!isGrounded)
         {
             anim.SetBool("Falling", true);
             direction.y += Gravity * Time.deltaTime;
@@ -162,6 +169,19 @@ public class PlayerCNTRL : MonoBehaviour
         {
             direction.y = jumpForce * 3;
             anim.SetBool("StartJump", true);
+        }
+        if (readyToJump)
+        {
+            queuJump -= Time.deltaTime;
+            if (queuJump <= 0f)
+            {
+                readyToJump = false;
+                queuJump = 0.5f;
+            }
+            else
+            if (isGrounded) { 
+                Jump(); 
+            }
         }
         //else
         //{
@@ -194,8 +214,8 @@ public class PlayerCNTRL : MonoBehaviour
             {
                 isWin = false;
                 if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
-                    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex+1);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
@@ -262,6 +282,8 @@ public class PlayerCNTRL : MonoBehaviour
             forwardSpeed = 0;
             anim.SetTrigger("Lose");
             GetComponent<SwipeDetector>().enabled = false;
+            vCam.Follow = null;
+            vCam.LookAt = null;
             GameManager.Instance.OnLose();
         }
         else if (other.gameObject.tag == ("Win"))
@@ -279,7 +301,7 @@ public class PlayerCNTRL : MonoBehaviour
     void AddCoin(int amount)
     {
         PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin")) + amount);
-        
+
     }
     //private void OnCollisionEnter(Collision collision)
     //{
