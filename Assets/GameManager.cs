@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     public float waterCollect;
     public float ValueWaterCollection;
     public Image waterBar;
-    public bool canExtinguishing;
-    public float speedLoseWater;
+
 
     [Header("Lvl Complete UI")]
     [SerializeField]

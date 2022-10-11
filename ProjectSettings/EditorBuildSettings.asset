@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/A-MyGameAssets/Scenes/MapScene.unity
     guid: 5e837f08b6feb2444b4571ce6c75c67b
   - enabled: 1
-    path: Assets/A-MyGameAssets/Scenes/Optimized scene1.unity
-    guid: e909949c591c4b84f833745db0a4243c
+    path: Assets/A-MyGameAssets/Scenes/Lvl1.unity
+    guid: a77778196df301f49a8a9649b16c3381
   - enabled: 1
     path: Assets/A-MyGameAssets/Scenes/LVL2.unity
     guid: be7da2d78e467814186fe24a4e542b91
+  - enabled: 0
+    path: Assets/A-MyGameAssets/Scenes/Optimized scene1.unity
+    guid: e909949c591c4b84f833745db0a4243c
   - enabled: 0
     path: Assets/A-MyGameAssets/Scenes/SeondLevelScene.unity
     guid: bb2403dad33ee984994b79c04980d08b

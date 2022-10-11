@@ -5,7 +5,10 @@ public class UIManager : MonoBehaviour
 {
     public RectTransform img;
 
-    
+    private void Awake()
+    {
+        
+    }
     private void Start()
     {
         img.localScale = Vector2.zero;
