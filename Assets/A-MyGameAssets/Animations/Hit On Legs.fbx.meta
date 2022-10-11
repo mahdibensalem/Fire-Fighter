@@ -39,7 +39,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 4
-      lastFrame: 122
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -609,8 +609,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 22a3fa1e9e55a404083b54bae5d4c52c,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 22a3fa1e9e55a404083b54bae5d4c52c, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1

@@ -261,6 +261,7 @@ public class PlayerCNTRL : MonoBehaviour
         {
             forwardSpeed = 0;
             anim.SetTrigger("Lose");
+            GetComponent<SwipeDetector>().enabled = false;
             GameManager.Instance.OnLose();
         }
         else if (other.gameObject.tag == ("Win"))
