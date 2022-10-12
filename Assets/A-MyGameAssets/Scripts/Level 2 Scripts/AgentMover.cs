@@ -98,6 +98,7 @@ public class AgentMover : MonoBehaviour
                             ray.direction =Vector3.forward;
                             Debug.Log(targets[0].GetChild(0).name);
                             targets[0].GetChild(0).gameObject.SetActive(true);
+                            VCam.SetActive(false);
                             canActiveColiders = false;
                         }
                         waterBar.fillAmount -= speedLoseWater * Time.deltaTime;
@@ -146,7 +147,7 @@ public class AgentMover : MonoBehaviour
     {
         VCam.SetActive(true);
         water.gameObject.SetActive(false);
-        Destroy(targets[0].gameObject);
+        Destroy(targets[0].gameObject,5);
         targets.Remove(targets[0]);
         canActiveColiders = true;
 
