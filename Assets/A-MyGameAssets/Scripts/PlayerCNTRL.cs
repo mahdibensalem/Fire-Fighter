@@ -167,8 +167,7 @@ public class PlayerCNTRL : MonoBehaviour
         }
         if (Physics.Raycast(controller.bounds.center, transform.forward, RayDistance + .5f, TrampolineLayer))
         {
-            direction.y = jumpForce * 3;
-            Debug.Log("dsfdsf;");
+            direction.y = jumpForce * 2f;
             anim.SetBool("StartJump", true);
         }
         if (readyToJump)
