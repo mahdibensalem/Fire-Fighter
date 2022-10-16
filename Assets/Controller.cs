@@ -4,6 +4,7 @@ public class Controller : MonoBehaviour
 {
     public GameObject[] lvlGO;
     [SerializeField] public int _lvlInlocked;
+    int lvlInlocked;
     Touch touch;
     [SerializeField] float slideSpeed;
     [SerializeField] Vector3 camPos;
@@ -11,10 +12,11 @@ public class Controller : MonoBehaviour
   [SerializeField]  GameObject objectSelected;
     [SerializeField] float MinPos, MaxPos;
     [SerializeField] Material green, Black,yellow;
+    Color IniColor;
     private void Awake()
     {
         camPos = transform.position;
-        int lvlInlocked = PlayerPrefs.GetInt("LVL");
+        lvlInlocked = PlayerPrefs.GetInt("LVL");
         for (int i = 0; i < lvlGO.Length; i++)
         {
             Debug.Log(i);
@@ -23,8 +25,11 @@ public class Controller : MonoBehaviour
         for (int j = 0; j < lvlInlocked; j++)
         {
             LVLActive(lvlGO[j]);
+            IniColor = lvlGO[j].GetComponentInChildren<Renderer>().material.color;
         }
         LVLActive(lvlGO[0]);
+        objectSelected=lvlGO[lvlInlocked-1];
+        objectSelected.GetComponentInChildren<Renderer>().material = green;
     }
     void disableLVL(GameObject lvlGO)
     {
@@ -53,35 +58,54 @@ public class Controller : MonoBehaviour
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
 
-                    if (hit.collider.gameObject.CompareTag("LVL"))
+                    if (!hit.collider.gameObject.CompareTag("LVL"))
                     {
-                        objectSelected = hit.collider.gameObject;
-                        objectSelected.GetComponentInChildren<Renderer>().material=green;
+                        canSelect = false;
+                        //objectSelected = hit.collider.gameObject;
+                        //objectSelected.GetComponentInChildren<Renderer>().material=green;
                     }
-                    else canSelect = false;
+                    //else canSelect = false;
                 }
             }
-            else
+            //else
             if (touch.phase == TouchPhase.Moved)
             {
                 camPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - (slideSpeed  * touch.deltaPosition.y));
                 canSelect = false;
-                if(objectSelected!=null)
-                objectSelected.GetComponentInChildren<Renderer>().material = yellow;
+                //if(objectSelected!=null)
+                //objectSelected.GetComponentInChildren<Renderer>().material = yellow;
             }
-            else if (touch.phase == TouchPhase.Ended && canSelect)
+            /*else*/ if (touch.phase == TouchPhase.Ended && canSelect)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
                     if (hit.collider.CompareTag("LVL"))
                     {
-                        SceneManager.LoadScene(int.Parse(hit.collider.name));
+                        objectSelected = hit.collider.gameObject;
+                        SelectLVL();
                     }
                 }
             }
         }
         transform.position = Vector3.Lerp(transform.position, camPos, Time.fixedDeltaTime );
         transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z, MinPos, MaxPos));
+    }
+    public void PlayButton()
+    {
+        SceneManager.LoadScene(int.Parse(objectSelected.name));
+    }
+    void SelectLVL()
+    {
+        for(int i =0;i<lvlInlocked; i++)
+        {
+            if(lvlGO[i] == objectSelected)
+            {
+                Debug.Log("azerazer");
+                objectSelected.GetComponentInChildren<Renderer>().material = green;
+            }
+            else lvlGO[i].GetComponentInChildren<Renderer>().material = yellow;
+        }
+    
     }
 }
