@@ -12,13 +12,15 @@ public class GameManager : MonoBehaviour
     public Image waterBar;
 
 
-    [Header("Lvl Complete UI")]
+    [Header("Lvl Progress UI")]
     [SerializeField]
     public GameObject player;
     public GameObject WinObject;
     public TextMeshProUGUI CurrentNumLvl;
     public TextMeshProUGUI NextNumLvl;
-    public Image lvlImageField;
+    public RectTransform ProgressArrow;
+    public Image lvlImageProgress;
+
     float distance;
 
 
@@ -36,8 +38,9 @@ public class GameManager : MonoBehaviour
     private void LateUpdate()
     {
          float m_distance = Vector3.Distance(player.transform.position, WinObject.transform.position);
-        lvlImageField.fillAmount = 1-(m_distance / distance);
-
+        lvlImageProgress.fillAmount = 1-(m_distance / distance);
+        //ProgressArrow.position =  new Vector3((lvlImageProgress.fillAmount * ((560f)/1))-280f, 0, 0);
+        ProgressArrow.anchoredPosition = new Vector3((lvlImageProgress.fillAmount * ((560f)/1)), 0, 0);
     }
     public void OnFilldWaterBar()
     {
