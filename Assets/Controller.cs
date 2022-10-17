@@ -16,7 +16,13 @@ public class Controller : MonoBehaviour
     private void Awake()
     {
         camPos = transform.position;
-        lvlInlocked = PlayerPrefs.GetInt("LVL");
+        if (PlayerPrefs.GetInt("LVL") != 0)
+        {
+            lvlInlocked = PlayerPrefs.GetInt("LVL");
+        }
+        else lvlInlocked = 1;
+
+
         for (int i = 0; i < lvlGO.Length; i++)
         {
             Debug.Log(i);

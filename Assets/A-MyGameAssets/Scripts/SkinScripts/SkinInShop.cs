@@ -8,6 +8,7 @@ public class SkinInShop : MonoBehaviour
     public BoxDB _BoxInfo { get { return BoxInfo; } }
     [SerializeField] private TextMeshProUGUI buttonText;
     [SerializeField] private Image skinImage;
+     public GameObject coinImage;
     [SerializeField] private bool isSkinUnlocked = false;
     [SerializeField] private bool isFreeSkin;
 
@@ -28,11 +29,13 @@ public class SkinInShop : MonoBehaviour
         if (PlayerPrefs.GetInt(BoxInfo._skinId.ToString()) == 1)
         {
             isSkinUnlocked = true;
+            coinImage.SetActive(false);
             buttonText.text = "Equip";
         }
         else
         {
-            buttonText.text = "Buy: " + BoxInfo._skinPrice;
+            buttonText.text = BoxInfo._skinPrice.ToString();
+            coinImage.SetActive(true);
         }
     }
 
@@ -52,10 +55,12 @@ public class SkinInShop : MonoBehaviour
                 isSkinUnlocked = true;
                 PlayerPrefs.SetInt(BoxInfo._skinId.ToString(), 1);
                 buttonText.text = "Equip";
+                coinImage.SetActive(false);
             }
             else
             {
-                buttonText.text = "Buy: " + BoxInfo._skinPrice;
+                buttonText.text =BoxInfo._skinPrice.ToString();
+                coinImage.SetActive(true);
             };
         }
     }

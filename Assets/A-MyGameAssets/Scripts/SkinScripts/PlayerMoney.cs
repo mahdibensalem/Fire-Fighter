@@ -15,7 +15,7 @@ public class PlayerMoney : MonoBehaviour
     {
         Instance = this;
 
-        playerMoney = PlayerPrefs.GetInt(prefMoney);
+        playerMoney = PlayerPrefs.GetInt(prefMoney, playerMoney);
         UpdateCoinsText();
     }
 
