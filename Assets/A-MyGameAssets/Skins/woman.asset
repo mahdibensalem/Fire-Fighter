@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: woman
   m_EditorClassIdentifier: 
   skinId: 2
-  skinModel: {fileID: 919132149155446097, guid: e98b6067f8cd38e4e86544bc03abfa8d, type: 3}
+  skinModel: {fileID: 919132149155446097, guid: 46edea5ecd0c079408542e5bb28baf94, type: 3}
   skinSprite: {fileID: 0}
   skinPrice: 350
