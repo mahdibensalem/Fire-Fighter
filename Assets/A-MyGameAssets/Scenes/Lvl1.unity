@@ -575,6 +575,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -115.49609}
   m_SizeDelta: {x: 600, y: 99.0078}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &236111707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236111708}
+  m_Layer: 0
+  m_Name: vector3.0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &236111708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236111707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 580959261319507831}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249471114
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,9 +656,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2534,7 +2564,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 378408540012623052}
+  m_LookAt: {fileID: 236111708}
   m_Follow: {fileID: 580959261319507831}
   m_Lens:
     FieldOfView: 100
@@ -3322,7 +3352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1838603957
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3671,7 +3701,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4662,6 +4692,7 @@ Transform:
   - {fileID: 8887423657823574871}
   - {fileID: 378408540012623052}
   - {fileID: 8997279220222941096}
+  - {fileID: 236111708}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4727,6 +4758,10 @@ MonoBehaviour:
   jumpForce: 15
   Gravity: -40
   timeToSlide: 0.7
+  detectSwipeOnlyAfterRelease: 1
+  minDistanceForSwipe: 50
+  minDistanceForTap: 1
+  sd: 0
   anim: {fileID: 7363473261894047842}
   isWin: 0
   isGrounded: 0

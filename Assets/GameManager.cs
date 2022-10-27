@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     public void OnLose()
     {
         LosePanel.SetActive(true);
+        TinySauce.OnGameFinished(false, lvlImageProgress.fillAmount);
+
 
     }
     public void OnWin()

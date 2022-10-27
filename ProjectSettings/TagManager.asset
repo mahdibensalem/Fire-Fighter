@@ -9,6 +9,8 @@ TagManager:
   - Obstacles
   - UP
   - Coin
+  - WBL
+  - Fire
   layers:
   - Default
   - TransparentFX

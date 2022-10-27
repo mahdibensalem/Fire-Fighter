@@ -15,7 +15,7 @@ public class AgentMover : MonoBehaviour
     public NavMeshAgent Agent;
     public Animator Anim;
     public SwipeRotate SR;
-    int zoneNumber = 1;
+
     public List<Transform> targets = new List<Transform>();
     public List<Transform> FireZone = new List<Transform>();
     public GameObject VCam;

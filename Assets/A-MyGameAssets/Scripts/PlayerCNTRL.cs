@@ -1,7 +1,7 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
 public class PlayerCNTRL : MonoBehaviour
 {
     [SerializeField] float queuJump = 0.5f;
@@ -30,6 +30,21 @@ public class PlayerCNTRL : MonoBehaviour
     [Header("Slide")]
     public float timeToSlide;
 
+
+    [Header("Swipe Detector")]
+    private Vector2 fingerDownPosition;
+    private Vector2 fingerUpPosition;
+
+    [SerializeField]
+    private bool detectSwipeOnlyAfterRelease = true;
+
+    [SerializeField]
+    private float minDistanceForSwipe = 50f;
+    [SerializeField]
+    private float minDistanceForTap = 1f;
+
+    public SwipeDirection sd;
+
     //Camera
     //public Transform cameraTransform;
     //public float speedLerpRotationCamera;
@@ -56,7 +71,7 @@ public class PlayerCNTRL : MonoBehaviour
     public RuntimeAnimatorController anim1;
     public Avatar avatar;
     GameObject thisSkin;
-    public CinemachineVirtualCamera vCam;
+    public CinemachineVirtualCamera vCam; 
     private void Awake()
     {
         Instance = this;
@@ -70,6 +85,7 @@ public class PlayerCNTRL : MonoBehaviour
 
         thisSkin.GetComponent<Animator>().runtimeAnimatorController = anim1;
         anim.avatar = avatar;
+        TinySauce.OnGameStarted("start lvl: " + SceneManager.GetActiveScene().buildIndex);
     }
     private void Start()
     {
@@ -98,6 +114,7 @@ public class PlayerCNTRL : MonoBehaviour
                 }
             }
         }
+        else
         if (SD.Direction == SwipeDirection.Left)
         {
             if (canMoveLeft)
@@ -118,6 +135,7 @@ public class PlayerCNTRL : MonoBehaviour
             }
 
         }
+        else
         if (SD.Direction == SwipeDirection.Up)
         {
             if (!isGrounded)
@@ -126,15 +144,16 @@ public class PlayerCNTRL : MonoBehaviour
                 return;
             }
 
-           else if (m_sliding)
-           {
+            else if (m_sliding)
+            {
 
                 StopSlide();
-           }
+            }
             Jump();
 
         }
-        if (SD.Direction == SwipeDirection.Down)
+        else
+        //if (SD.Direction == SwipeDirection.Down)
         {
             if (!isGrounded)
             {
@@ -180,8 +199,9 @@ public class PlayerCNTRL : MonoBehaviour
                 queuJump = 0.5f;
             }
             else
-            if (isGrounded) { 
-                Jump(); 
+            if (isGrounded)
+            {
+                Jump();
             }
         }
         //else
@@ -202,6 +222,7 @@ public class PlayerCNTRL : MonoBehaviour
     }
     private void FixedUpdate()
     {
+
         direction.x = _speedMoveX;
         direction.z = forwardSpeed;
         controller.Move(direction * Time.fixedDeltaTime);
@@ -219,7 +240,118 @@ public class PlayerCNTRL : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+        //************************************************************ for swipe******************************************************************************//
+        //foreach (Touch touch in Input.touches)
+        //{
+
+        //    if (touch.phase == TouchPhase.Began)
+        //    {
+        //        detectSwipeOnlyAfterRelease = true;
+        //        fingerUpPosition = touch.position;
+        //        fingerDownPosition = touch.position;
+        //    }
+        //    if (Vector2.Distance(fingerDownPosition, touch.position) > minDistanceForSwipe)
+        //    {
+        //        if (detectSwipeOnlyAfterRelease)
+        //        {
+        //            fingerDownPosition = touch.position;
+        //            DetectSwipe();
+        //        }
+        //    }
+        //    else
+        //    if (touch.phase == TouchPhase.Ended)
+        //    {
+        //        if (detectSwipeOnlyAfterRelease)
+        //        {
+        //            fingerDownPosition = touch.position;
+        //            DetectSwipe();
+        //        }
+            //}
+        //}
+        //*****************************************************************************************************//
     }
+    //************************************************************************************************************//
+    //private void DetectSwipe()
+    //{
+    //    detectSwipeOnlyAfterRelease = false;
+    //    if (SwipeDistanceCheckMet())
+    //    {
+    //        if (Vector2.Distance(fingerDownPosition, fingerUpPosition) > minDistanceForSwipe)
+    //        {
+
+    //            if (IsVerticalSwipe())
+    //            {
+    //                var direction = fingerDownPosition.y - fingerUpPosition.y > 0 ? SwipeDirection.Up : SwipeDirection.Down;
+    //                SendSwipe(direction);
+
+    //            }
+    //            else if (isHorizontalSwipe())
+    //            {
+    //                var direction = fingerDownPosition.x - fingerUpPosition.x > 0 ? SwipeDirection.Right : SwipeDirection.Left;
+    //                SendSwipe(direction);
+
+    //            }
+    //        }
+    //    }
+    //}
+    //private bool isHorizontalSwipe()
+    //{
+    //    return VerticalMovementDistance() < HorizontalMovementDistance();
+    //}
+    //private bool IsVerticalSwipe()
+    //{
+    //    return VerticalMovementDistance() > HorizontalMovementDistance();
+    //}
+
+    //private bool SwipeDistanceCheckMet()
+    //{
+    //    return VerticalMovementDistance() > minDistanceForSwipe || HorizontalMovementDistance() > minDistanceForSwipe;
+    //}
+
+    //private float VerticalMovementDistance()
+    //{
+    //    return Mathf.Abs(fingerDownPosition.y - fingerUpPosition.y);
+    //}
+
+    //private float HorizontalMovementDistance()
+    //{
+    //    return Mathf.Abs(fingerDownPosition.x - fingerUpPosition.x);
+    //}
+
+    //void SendSwipe(SwipeDirection direction)
+    //{
+
+    //    sd = direction;
+    //    SwipeData swipeData = new SwipeData()
+    //    {
+    //        Direction = direction,
+    //        //StartPosition = fingerDownPosition,
+    //        //EndPosition = fingerUpPosition
+    //    };
+    //    SwipeDetector_OnSwipe(swipeData);
+    //    //OnSwipe(swipeData);
+
+    //}
+
+
+    //public struct SwipeData
+    //{
+    //    //public Vector2 StartPosition;
+    //    //public Vector2 EndPosition;
+    //    public SwipeDirection Direction;
+    //}
+
+    //public enum SwipeDirection
+    //{
+    //    Up,
+    //    Down,
+    //    Left,
+    //    Right,
+
+    //}
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////
+    /// </summary>
     void CheckDirection()
     {
 
@@ -254,7 +386,7 @@ public class PlayerCNTRL : MonoBehaviour
     }
     void Jump()
     {
-        anim.SetInteger("JumpIndex", Random.Range(0, 1));
+        anim.SetInteger("JumpIndex", Random.Range(0, 2));
         anim.SetBool("StartJump", true);
         direction.y = jumpForce;
 
@@ -293,6 +425,7 @@ public class PlayerCNTRL : MonoBehaviour
             isWin = true;
             GetComponent<SwipeDetector>().enabled = false;
             Debug.Log("winn");
+            TinySauce.OnGameFinished(true, 0);
         }
         else if (other.gameObject.tag == ("Coin"))
         {
