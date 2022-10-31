@@ -134,7 +134,14 @@ public class AgentMover : MonoBehaviour
                         }
                         ////////////////
                     }
-                    else Anim.SetBool("Win", true);
+                    else
+                    {
+                        Anim.SetBool("Win", true);
+                        if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
+                            PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    }
+
                     // Done
                 }
             }

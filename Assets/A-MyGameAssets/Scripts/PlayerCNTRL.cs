@@ -60,6 +60,7 @@ public class PlayerCNTRL : MonoBehaviour
     public float RayDistance;
     public LayerMask GroundLayer;
     public LayerMask TrampolineLayer;
+    public LayerMask winLayer;
     public bool stopSlide;
 
     //water
@@ -71,7 +72,7 @@ public class PlayerCNTRL : MonoBehaviour
     public RuntimeAnimatorController anim1;
     public Avatar avatar;
     GameObject thisSkin;
-    public CinemachineVirtualCamera vCam; 
+    public CinemachineVirtualCamera vCam;
     private void Awake()
     {
         Instance = this;
@@ -179,16 +180,24 @@ public class PlayerCNTRL : MonoBehaviour
             anim.SetBool("Falling", true);
             direction.y += Gravity * Time.deltaTime;
         }
+        Ray ray = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(controller.bounds.center, -transform.up, RayDistance + .8f, GroundLayer))
         {
             Debug.DrawRay(controller.bounds.center, -transform.up * (RayDistance + .8f), Color.black);
             anim.SetBool("Falling", false);
         }
-        if (Physics.Raycast(controller.bounds.center, transform.forward, RayDistance + .5f, TrampolineLayer))
+        if (Physics.Raycast(ray, RayDistance + .5f, TrampolineLayer))
         {
             direction.y = jumpForce * 2f;
             anim.SetInteger("JumpIndex", Random.Range(0, 2));
             anim.SetBool("StartJump", true);
+        }
+        if (Physics.Raycast(ray, RayDistance + .5f, winLayer))
+        {
+            isWin = true;
+            GetComponent<SwipeDetector>().enabled = false;
+            Debug.Log("winn");
+            TinySauce.OnGameFinished(true, 0);
         }
         if (readyToJump)
         {
@@ -266,7 +275,7 @@ public class PlayerCNTRL : MonoBehaviour
         //            fingerDownPosition = touch.position;
         //            DetectSwipe();
         //        }
-            //}
+        //}
         //}
         //*****************************************************************************************************//
     }
@@ -419,13 +428,6 @@ public class PlayerCNTRL : MonoBehaviour
             vCam.Follow = null;
             vCam.LookAt = null;
             GameManager.Instance.OnLose();
-        }
-        else if (other.gameObject.tag == ("Win"))
-        {
-            isWin = true;
-            GetComponent<SwipeDetector>().enabled = false;
-            Debug.Log("winn");
-            TinySauce.OnGameFinished(true, 0);
         }
         else if (other.gameObject.tag == ("Coin"))
         {

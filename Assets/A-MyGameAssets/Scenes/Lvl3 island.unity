@@ -2503,7 +2503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaterBallGO: {fileID: 2918810872123076585, guid: 54e4fe2b29667994ba423d7beca81342, type: 3}
-  spawnTimer: 0.1
+  spawnTimer: 0.2
 --- !u!114 &400348817
 MonoBehaviour:
   m_ObjectHideFlags: 0

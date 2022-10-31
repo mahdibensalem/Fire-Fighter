@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/A-MyGameAssets/Scenes/LVL2.unity
     guid: be7da2d78e467814186fe24a4e542b91
+  - enabled: 1
+    path: Assets/A-MyGameAssets/Scenes/Lvl3 island.unity
+    guid: e5b1b4e662b4ac348947e30dcf38bce6
   - enabled: 0
     path: Assets/A-MyGameAssets/Scenes/Optimized scene1.unity
     guid: e909949c591c4b84f833745db0a4243c
   - enabled: 0
-    path: Assets/A-MyGameAssets/Scenes/SeondLevelScene.unity
-    guid: bb2403dad33ee984994b79c04980d08b
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
