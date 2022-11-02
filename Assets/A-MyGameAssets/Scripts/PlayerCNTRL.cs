@@ -6,7 +6,7 @@ public class PlayerCNTRL : MonoBehaviour
 {
     [SerializeField] float queuJump = 0.5f;
     [SerializeField] bool readyToJump = false;
-
+    public GameObject myInitialSkin;
     [Header("controller")]
     public static PlayerCNTRL Instance;
     CharacterController controller;
@@ -79,7 +79,10 @@ public class PlayerCNTRL : MonoBehaviour
         controller = GetComponent<CharacterController>();
         _speedMoveX = 0;
 
-        thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+        //if (SkinManager.EquipedSkin.gameObject == null)
+        //    thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+        //else
+        thisSkin = myInitialSkin;
 
         if (!thisSkin.GetComponent<Animator>())
             anim = thisSkin.AddComponent<Animator>();
@@ -174,22 +177,27 @@ public class PlayerCNTRL : MonoBehaviour
         if (isGrounded)
         {
             direction.y = Gravity * Time.deltaTime;
+            anim.SetBool("StartJump", false);
+            anim.SetBool("Falling", false);
         }
         if (!isGrounded)
         {
-            anim.SetBool("Falling", true);
             direction.y += Gravity * Time.deltaTime;
+
         }
         Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(controller.bounds.center, -transform.up, RayDistance + .8f, GroundLayer))
+
+        if (Physics.Raycast(controller.bounds.center, -transform.up, RayDistance + .3f, GroundLayer))
         {
             Debug.DrawRay(controller.bounds.center, -transform.up * (RayDistance + .8f), Color.black);
             anim.SetBool("Falling", false);
         }
+        else anim.SetBool("Falling", true);
+
         if (Physics.Raycast(ray, RayDistance + .5f, TrampolineLayer))
         {
             direction.y = jumpForce * 2f;
-            anim.SetInteger("JumpIndex", Random.Range(0, 2));
+            anim.SetInteger("JumpIndex", 0);
             anim.SetBool("StartJump", true);
         }
         if (Physics.Raycast(ray, RayDistance + .5f, winLayer))
@@ -249,6 +257,7 @@ public class PlayerCNTRL : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+        #region Commentent for Swipe
         //************************************************************ for swipe******************************************************************************//
         //foreach (Touch touch in Input.touches)
         //{
@@ -361,6 +370,8 @@ public class PlayerCNTRL : MonoBehaviour
     /// <summary>
     /// ////////////////////////////////////////////////////////////////////////////
     /// </summary>
+    #endregion
+
     void CheckDirection()
     {
 
@@ -395,10 +406,10 @@ public class PlayerCNTRL : MonoBehaviour
     }
     void Jump()
     {
-        anim.SetInteger("JumpIndex", Random.Range(0, 2));
-        anim.SetBool("StartJump", true);
+        anim.SetInteger("JumpIndex", Random.Range(1,3));
+        anim.SetBool("StartJump",true);
+        anim.SetBool("Falling", false);
         direction.y = jumpForce;
-
 
     }
     public void Turn()
@@ -413,7 +424,7 @@ public class PlayerCNTRL : MonoBehaviour
         if (Physics.Raycast(controller.bounds.center, -transform.up, RayDistance, GroundLayer))
         {
             isGrounded = true;
-            anim.SetBool("StartJump", false);
+            //anim.SetBool("StartJump", false);
         }
         else isGrounded = false;
     }

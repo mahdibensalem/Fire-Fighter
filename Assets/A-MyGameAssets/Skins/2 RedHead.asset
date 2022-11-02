@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79bf026f6de52754a9f91869c968a131, type: 3}
-  m_Name: New Box DB
+  m_Name: 2 RedHead
   m_EditorClassIdentifier: 
-  skinId: 1
-  skinModel: {fileID: 919132149155446097, guid: 8ddc069d4b42e084daab656a3033447c, type: 3}
-  skinSprite: {fileID: 0}
-  skinPrice: 0
+  skinId: 2
+  skinModel: {fileID: 919132149155446097, guid: 46edea5ecd0c079408542e5bb28baf94, type: 3}
+  skinSprite: {fileID: 21300000, guid: 005ad0e0cf1937948b8960fa7723d9ad, type: 3}
+  skinPrice: 350
