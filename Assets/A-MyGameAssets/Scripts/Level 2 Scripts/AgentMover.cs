@@ -154,7 +154,7 @@ public class AgentMover : MonoBehaviour
     {
         VCam.SetActive(true);
         water.gameObject.SetActive(false);
-        Destroy(targets[0].gameObject,5);
+        Destroy(targets[0].gameObject,2);
         targets.Remove(targets[0]);
         canActiveColiders = true;
 

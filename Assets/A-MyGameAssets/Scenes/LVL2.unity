@@ -259,6 +259,7 @@ MonoBehaviour:
   - {fileID: 1811531917}
   healthBar: {fileID: 1574291877}
   canvasHealth: {fileID: 1345028388}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &97095393
@@ -28717,7 +28718,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380825785}
-  m_LocalRotation: {x: 0.4072707, y: 0.37535304, z: -0.18849774, w: 0.8109928}
+  m_LocalRotation: {x: 0.40727073, y: 0.37535307, z: -0.18849774, w: 0.8109928}
   m_LocalPosition: {x: -117.70732, y: 45, z: -85.61915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -33614,6 +33615,7 @@ MonoBehaviour:
   - {fileID: 1355552345}
   healthBar: {fileID: 2093435511}
   canvasHealth: {fileID: 1883540238}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &475389924
@@ -38302,7 +38304,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572090213
 GameObject:
@@ -38373,6 +38375,7 @@ MonoBehaviour:
   - {fileID: 1614957303}
   healthBar: {fileID: 539331499}
   canvasHealth: {fileID: 1351512527}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &578317081
@@ -52625,7 +52628,7 @@ RectTransform:
   m_Children:
   - {fileID: 6178471989545021698}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -57514,8 +57517,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0282d3df60344b8e9caa7539a1562, type: 2}
+  m_sharedMaterial: {fileID: -3043936348383308397, guid: f7b0282d3df60344b8e9caa7539a1562, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -81527,7 +81530,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536498572
 GameObject:
@@ -86662,8 +86665,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 12
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0282d3df60344b8e9caa7539a1562, type: 2}
+  m_sharedMaterial: {fileID: -3043936348383308397, guid: f7b0282d3df60344b8e9caa7539a1562, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -86693,7 +86696,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -86806,6 +86809,7 @@ MonoBehaviour:
   - {fileID: 578317085}
   healthBar: {fileID: 1212782078}
   canvasHealth: {fileID: 1472048825}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &1685258131
@@ -86867,7 +86871,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685258131}
-  m_LocalRotation: {x: 0.4072707, y: 0.37535304, z: -0.18849774, w: 0.8109928}
+  m_LocalRotation: {x: 0.40727073, y: 0.37535307, z: -0.18849774, w: 0.8109928}
   m_LocalPosition: {x: -117.70732, y: 45, z: -85.61915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -86944,6 +86948,7 @@ MonoBehaviour:
   - {fileID: 1465300843}
   healthBar: {fileID: 730882632}
   canvasHealth: {fileID: 2064331779}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &1746663745
@@ -87015,6 +87020,7 @@ MonoBehaviour:
   - {fileID: 258487559}
   healthBar: {fileID: 880548411}
   canvasHealth: {fileID: 310512446}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &1804804991
@@ -96526,6 +96532,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1839064748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_Name
+      value: CFXM_Text Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24a4e4c3dd5629940ac2dd23e6c35731, type: 3}
 --- !u!1 &1883540238
 GameObject:
   m_ObjectHideFlags: 0
@@ -96771,6 +96838,7 @@ MonoBehaviour:
   - {fileID: 160623250}
   healthBar: {fileID: 1370025421}
   canvasHealth: {fileID: 255623978}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &2014726200
@@ -120940,6 +121008,7 @@ MonoBehaviour:
   - {fileID: 918408758515881848}
   healthBar: {fileID: 1942727157730569792}
   canvasHealth: {fileID: 1942727158623563724}
+  TextPrefab: {fileID: 3013865614773981012, guid: 8345b50d1f28c17419ee10d6f37f7aa7, type: 3}
   regenDelay: 2.5
   regenRate: 0.1
 --- !u!1 &1942727158906103484

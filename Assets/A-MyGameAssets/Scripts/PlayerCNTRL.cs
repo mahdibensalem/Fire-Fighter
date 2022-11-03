@@ -79,16 +79,16 @@ public class PlayerCNTRL : MonoBehaviour
         controller = GetComponent<CharacterController>();
         _speedMoveX = 0;
 
-        //if (SkinManager.EquipedSkin.gameObject == null)
-        //    thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
-        //else
-        thisSkin = myInitialSkin;
+
+        thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+
+
 
         if (!thisSkin.GetComponent<Animator>())
             anim = thisSkin.AddComponent<Animator>();
 
         thisSkin.GetComponent<Animator>().runtimeAnimatorController = anim1;
-        anim.avatar = avatar;
+        //anim.avatar = avatar;
         TinySauce.OnGameStarted("start lvl: " + SceneManager.GetActiveScene().buildIndex);
     }
     private void Start()
