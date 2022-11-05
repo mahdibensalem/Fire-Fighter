@@ -248,8 +248,14 @@ public class PlayerCNTRL : MonoBehaviour
         CheckDirection();
         if (isWin)
         {
-            forwardSpeed = Mathf.Lerp(forwardSpeed, 0, 2 * Time.fixedDeltaTime);
-            if (forwardSpeed <= 0.05f)
+            anim.SetTrigger("Win");
+            if (canMoveRight)
+            {
+                _speedMoveX = speedMoveX;
+                canMoveRight = false;
+            }
+            forwardSpeed = Mathf.Lerp(forwardSpeed, 0,  Time.fixedDeltaTime);
+            if (forwardSpeed <= 0.1f)
             {
                 isWin = false;
                 if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
