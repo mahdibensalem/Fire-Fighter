@@ -18,6 +18,7 @@ public class AgentMover : MonoBehaviour
 
     public List<Transform> targets = new List<Transform>();
     public List<Transform> FireZone = new List<Transform>();
+    public List<GameObject> DoorAnim = new List<GameObject>();
     public GameObject VCam;
     public CinemachineVirtualCamera virtualcamera;
     [Header("Water")]
@@ -154,6 +155,7 @@ public class AgentMover : MonoBehaviour
     {
         VCam.SetActive(true);
         water.gameObject.SetActive(false);
+
         Destroy(targets[0].gameObject,2);
         targets.Remove(targets[0]);
         canActiveColiders = true;
@@ -163,6 +165,8 @@ public class AgentMover : MonoBehaviour
         if (targets.Count != 0)
         {
             Agent.destination = targets[0].position;
+            DoorAnim[0].GetComponent<Animator>().enabled = true;
+            DoorAnim.Remove(DoorAnim[0]);
 
         }
         lvlImageField.fillAmount += 1f/TargetCount;
