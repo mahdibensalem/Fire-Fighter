@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/A-MyGameAssets/Scenes/Lvl1.unity
     guid: a77778196df301f49a8a9649b16c3381
   - enabled: 1
-    path: Assets/A-MyGameAssets/Scenes/LVL2.unity
+    path: Assets/A - MahdiScene/LVL2.unity
     guid: be7da2d78e467814186fe24a4e542b91
   - enabled: 1
-    path: Assets/A-MyGameAssets/Scenes/Lvl3 island.unity
+    path: Assets/A - MahdiScene/Lvl3 island.unity
     guid: e5b1b4e662b4ac348947e30dcf38bce6
   m_configObjects: {}
