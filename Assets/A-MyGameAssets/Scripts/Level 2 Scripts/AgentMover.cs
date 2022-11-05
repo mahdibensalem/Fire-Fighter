@@ -1,5 +1,6 @@
 using Cinemachine;
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +20,8 @@ public class AgentMover : MonoBehaviour
     public List<Transform> targets = new List<Transform>();
     public List<Transform> FireZone = new List<Transform>();
     public List<GameObject> DoorAnim = new List<GameObject>();
-    public GameObject VCam;
+    public GameObject VCam, VendCam;
+
     public CinemachineVirtualCamera virtualcamera;
     [Header("Water")]
     public GameObject water;
@@ -138,9 +140,11 @@ public class AgentMover : MonoBehaviour
                     else
                     {
                         Anim.SetBool("Win", true);
+                        VendCam.SetActive(true);
+
                         if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
                             PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                        StartCoroutine(NextLevel(5f));
                     }
 
                     // Done
@@ -149,6 +153,12 @@ public class AgentMover : MonoBehaviour
         }
         //else rotation = Quaternion.Euler(Vector3.zero);
         Anim.SetFloat("Speed", Agent.velocity.sqrMagnitude / 25);
+
+    }
+    IEnumerator  NextLevel (float time)
+    {
+        yield return  new WaitForSeconds(time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
     public void NextTarget()
