@@ -25,7 +25,7 @@ public class Controller : MonoBehaviour
 
         for (int i = 0; i < lvlGO.Length; i++)
         {
-            Debug.Log(i);
+
             disableLVL(lvlGO[i]);
         }
         for (int j = 0; j < lvlInlocked; j++)
@@ -107,7 +107,6 @@ public class Controller : MonoBehaviour
         {
             if(lvlGO[i] == objectSelected)
             {
-                Debug.Log("azerazer");
                 objectSelected.GetComponentInChildren<Renderer>().material = green;
             }
             else lvlGO[i].GetComponentInChildren<Renderer>().material = yellow;

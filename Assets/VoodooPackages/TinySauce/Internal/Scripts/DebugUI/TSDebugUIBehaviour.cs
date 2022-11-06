@@ -10,19 +10,23 @@ namespace Voodoo.Sauce.Internal
         public enum TSDebugUIActiveScreen
         {
             Info,
-            Events
+            Events,
+            ABTest
         }
 
         [Header("== Tabs ==")]
         [SerializeField] private string infoScreenName = "INFO";
         [SerializeField] private string eventsScreenName = "EVENTS";
+        [SerializeField] private string abtestScreenName = "AB TEST";
         [Space(4)]
         [SerializeField] private Button infoTabBtn;
         [SerializeField] private Button eventsTabBtn;
+        [SerializeField] private Button abtestTabBtn;
 
         [Header("== Screens ==")]
         [SerializeField] private TSDebugUIScreen infoScreen;
         [SerializeField] private TSDebugUIScreen eventsScreen;
+        [SerializeField] private TSDebugUIScreen abtestScreen;
 
         [Header("== App Info Fields ==")]
         [SerializeField] private Text unityVerion;
@@ -33,7 +37,10 @@ namespace Voodoo.Sauce.Internal
         private static TSDebugUIBehaviour _instance;
         public static TSDebugUIBehaviour Instance { get => _instance; }
 
-
+        
+        private EventSystem eventSystemPrefab;
+        private EventSystem eventSystem;
+        
         private TinySauceSettings _tsSettings;
 
         private TSDebugUIActiveScreen activeScreen = TSDebugUIActiveScreen.Info;
@@ -51,8 +58,8 @@ namespace Voodoo.Sauce.Internal
 
             _instance = this;
 
-            if (FindObjectOfType<EventSystem>() == null) Instantiate(new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule)));
-
+            //if (FindObjectOfType<EventSystem>() == null) Instantiate(new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule)));
+            InitEventSystem();
 
             _tsSettings = TinySauceSettings.Load();
             UpdateInfo();
@@ -72,8 +79,28 @@ namespace Voodoo.Sauce.Internal
         }
 
 
+        private  void InitEventSystem()
+        {
+            if (FindObjectOfType<EventSystem>() != null) return;
+            
+            
+            if (eventSystemPrefab == null)
+            {
+                EventSystem[] eventSystemList = Resources.LoadAll<EventSystem>("Prefabs");
+                eventSystemPrefab = eventSystemList[0];
+            }
+                    
+            if (eventSystemPrefab == null)
+                Debug.LogError("There is no TSEventSystem prefab in the 'Assets/VoodooPackages/TinySauce/Resources/Prefabs' folder");
+
+            eventSystem = Instantiate(eventSystemPrefab);
+        }
+        
         public void CloseDebugUI()
         {
+            if (eventSystem != null)
+                Destroy(eventSystem.gameObject);
+            
             Destroy(gameObject);
         }
 
@@ -89,12 +116,21 @@ namespace Voodoo.Sauce.Internal
         {
             tabDictionary[TSDebugUIActiveScreen.Info] = infoTabBtn;
             tabDictionary[TSDebugUIActiveScreen.Events] = eventsTabBtn;
+            tabDictionary[TSDebugUIActiveScreen.ABTest] = abtestTabBtn;
 
             screenDictionary[TSDebugUIActiveScreen.Info] = infoScreen;
             screenDictionary[TSDebugUIActiveScreen.Events] = eventsScreen;
+            screenDictionary[TSDebugUIActiveScreen.ABTest] = abtestScreen;
 
             infoScreen.gameObject.SetActive(false);
             eventsScreen.gameObject.SetActive(false);
+            abtestScreen.gameObject.SetActive(false);
+
+            if (TinySauceBehaviour.ABTestManager == null || TinySauceBehaviour.ABTestManager.GetAbTestValues().Length == 0)
+            {
+                abtestTabBtn.interactable = false;
+                abtestTabBtn.image.color = new Color(1, 0.75f, 0.75f);
+            }
         }
 
         private void ToggleTab(bool isActive)
@@ -111,6 +147,8 @@ namespace Voodoo.Sauce.Internal
                 newActiveScreen = TSDebugUIActiveScreen.Info;
             else if (screenName == eventsScreenName)
                 newActiveScreen = TSDebugUIActiveScreen.Events;
+            else if (screenName == abtestScreenName)
+                newActiveScreen = TSDebugUIActiveScreen.ABTest;
             else
             {
                 Debug.LogError("Screen name is not existing");

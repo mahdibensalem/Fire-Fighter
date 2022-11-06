@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using GameAnalyticsSDK;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Voodoo.Sauce.Internal.Analytics
 {
@@ -92,13 +95,20 @@ namespace Voodoo.Sauce.Internal.Analytics
             }
             Debug.Log("INSTANTIATE GA");
 
+            string appVersionName = Application.version;
+            
+            if (Type.GetType("Voodoo.Sauce.Internal.Ads.TSAdsManager") != null)
+                if ((bool) Type.GetType("Voodoo.Sauce.Internal.Ads.TSAdsManager").GetField("_areAdsEnabled", BindingFlags.Static | BindingFlags.NonPublic).GetValue(null))
+                    appVersionName += "-Ads";
+            
+
             if (!string.IsNullOrEmpty(TinySauce.GetABTestCohort()))
             {
-                SetBuildVersion($"{Application.version}-ABCohort:{TinySauce.GetABTestCohort() ?? "Default"}");
+                SetBuildVersion($"{appVersionName}-ABCohort:{TinySauce.GetABTestCohort() ?? "Default"}");
             }
             else
             {
-                SetBuildVersion($"{Application.version}");
+                SetBuildVersion($"{appVersionName}");
             }
             
             SetCustomFields();

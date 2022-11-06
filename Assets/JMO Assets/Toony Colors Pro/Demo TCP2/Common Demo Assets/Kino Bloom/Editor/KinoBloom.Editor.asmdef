@@ -1,10 +1,11 @@
 {
     "name": "ToonyColorsPro.Demo.Editor",
+    "rootNamespace": "",
     "references": [
         "KinoBloom.Runtime"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
+        "Android",
         "Editor"
     ],
     "excludePlatforms": [],
@@ -12,5 +13,7 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
