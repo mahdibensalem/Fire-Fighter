@@ -22672,7 +22672,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -2.5}
-  m_SizeDelta: {x: 200, y: 105}
+  m_SizeDelta: {x: 204.66, y: 105}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &8860106730031080469
 GameObject:
@@ -22720,7 +22720,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999
+  m_text: '9999
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7b0282d3df60344b8e9caa7539a1562, type: 2}
   m_sharedMaterial: {fileID: -3043936348383308397, guid: f7b0282d3df60344b8e9caa7539a1562, type: 2}
@@ -22783,7 +22785,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 55.95331, y: 0, z: 0, w: 0}
+  m_margin: {x: -0.25933838, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -23088,7 +23090,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -30, y: -30}
-  m_SizeDelta: {x: 250, y: 110}
+  m_SizeDelta: {x: 314.6638, y: 110}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8860106730285724925
 CanvasRenderer:
