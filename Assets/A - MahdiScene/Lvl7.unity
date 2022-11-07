@@ -10281,7 +10281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283436932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.917156, y: 12.01, z: 156.4}
+  m_LocalPosition: {x: -21.917156, y: 12.01, z: 143.69}
   m_LocalScale: {x: 5.74, y: 3.69, z: 1.32}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16112,7 +16112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectSwipeOnlyAfterRelease: 0
-  minDistanceForSwipe: 30
+  minDistanceForSwipe: 20
   minDistanceForTap: 1
   sd: 0
 --- !u!4 &580959261319507831
@@ -16217,7 +16217,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stopSlide: 0
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 532786246}
   changeBlockSpeed: 0
   anim1: {fileID: 9100000, guid: 60d5fdfabba7bb749aa33ef3015b82dc, type: 2}
   avatar: {fileID: 9000000, guid: 22a3fa1e9e55a404083b54bae5d4c52c, type: 3}
