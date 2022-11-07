@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79bf026f6de52754a9f91869c968a131, type: 3}
-  m_Name: 1
+  m_Script: {fileID: 11500000, guid: ea4d495dc6d5ba64b90db7afda6a48a4, type: 3}
+  m_Name: AdjustSettings
   m_EditorClassIdentifier: 
-  skinId: 1
-  skinModel: {fileID: 4360495825928410142, guid: 4d45d7a15f85a164e8cbff93f2634263, type: 3}
-  skinSprite: {fileID: 21300000, guid: e70732d380f37b64f820b3fefe386538, type: 3}
-  skinPrice: 0
+  isPostProcessingEnabled: 1
+  isiOS14ProcessingEnabled: 0
