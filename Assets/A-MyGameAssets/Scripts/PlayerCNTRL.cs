@@ -470,6 +470,6 @@ public class PlayerCNTRL : MonoBehaviour
     //}
     public void reloadScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
