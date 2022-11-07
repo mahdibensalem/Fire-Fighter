@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class PlayerCNTRL : MonoBehaviour
 {
     [SerializeField] float queuJump = 0.5f;
@@ -29,7 +30,8 @@ public class PlayerCNTRL : MonoBehaviour
     // Slide
     [Header("Slide")]
     public float timeToSlide;
-
+    float _lengthSlide;
+    bool m_sliding;
 
     [Header("Swipe Detector")]
     private Vector2 fingerDownPosition;
@@ -63,9 +65,9 @@ public class PlayerCNTRL : MonoBehaviour
     public LayerMask winLayer;
     public bool stopSlide;
 
-    //water
-    float _lengthSlide;
-    bool m_sliding;
+    //coin
+    [SerializeField] TextMeshProUGUI moneyText;
+
 
     public float changeBlockSpeed;
 
@@ -454,8 +456,9 @@ public class PlayerCNTRL : MonoBehaviour
     }
     void AddCoin(int amount)
     {
-        PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin")) + amount);
-
+        int money = PlayerPrefs.GetInt("Coin", (PlayerPrefs.GetInt("Coin"))) + amount;
+        PlayerPrefs.SetInt("Coin", money);
+        moneyText.text=money.ToString();
     }
     //private void OnCollisionEnter(Collision collision)
     //{
