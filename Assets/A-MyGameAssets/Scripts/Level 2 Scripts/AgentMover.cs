@@ -39,6 +39,7 @@ public class AgentMover : MonoBehaviour
     public TextMeshProUGUI CurrentNumLvl;
     public TextMeshProUGUI NextNumLvl;
     public Image lvlImageField;
+    public GameObject winPanel;
     int TargetCount;
     public RectTransform ProgressArrow;
     private void Awake()
@@ -145,7 +146,7 @@ public class AgentMover : MonoBehaviour
 
                         if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
                             PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
-                        StartCoroutine(NextLevel(5f));
+                        StartCoroutine(ActiveWinPanel(2f));
                     }
 
                     // Done
@@ -156,11 +157,10 @@ public class AgentMover : MonoBehaviour
         Anim.SetFloat("Speed", Agent.velocity.sqrMagnitude / 25);
 
     }
-    IEnumerator  NextLevel (float time)
+    IEnumerator  ActiveWinPanel (float time)
     {
         yield return  new WaitForSeconds(time);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        winPanel.SetActive(true);
     }
     public void NextTarget()
     {
