@@ -29058,7 +29058,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380825785}
-  m_LocalRotation: {x: 0.4072707, y: 0.37535307, z: -0.18849777, w: 0.8109928}
+  m_LocalRotation: {x: 0.40727073, y: 0.3753531, z: -0.1884978, w: 0.8109928}
   m_LocalPosition: {x: -117.70732, y: 45, z: -85.61915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -87815,7 +87815,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685258131}
-  m_LocalRotation: {x: 0.4072707, y: 0.37535307, z: -0.18849777, w: 0.8109928}
+  m_LocalRotation: {x: 0.40727073, y: 0.3753531, z: -0.1884978, w: 0.8109928}
   m_LocalPosition: {x: -117.70732, y: 45, z: -85.61915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -154486,6 +154486,9 @@ MonoBehaviour:
   lvlImageField: {fileID: 3496354261492447445}
   winPanel: {fileID: 2104010005}
   ProgressArrow: {fileID: 3496354261505282538}
+  CoinTXT: {fileID: 3496354261756615975}
+  FireTxt: {fileID: 3496354262191878007}
+  NumAllFire: 8
 --- !u!4 &8169119576688609615
 Transform:
   m_ObjectHideFlags: 0

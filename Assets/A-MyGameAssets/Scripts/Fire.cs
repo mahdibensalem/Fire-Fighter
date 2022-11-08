@@ -30,6 +30,8 @@ public class Fire : MonoBehaviour
         if (currentIntensity <= 0.05f && canDestroy)
         {
             isLit = false;
+            AgentMover.Instance.UpgradeCoin(5);
+            
            GameObject go = Instantiate(TextPrefab, transform.position, Quaternion.identity);
             go.transform.LookAt(Camera.main.transform);
             destroy();

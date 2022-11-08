@@ -42,6 +42,9 @@ public class AgentMover : MonoBehaviour
     public GameObject winPanel;
     int TargetCount;
     public RectTransform ProgressArrow;
+    public TextMeshProUGUI CoinTXT;
+    public TextMeshProUGUI FireTxt;
+    public int NumAllFire;
     private void Awake()
     {
         Instance = this;
@@ -49,6 +52,7 @@ public class AgentMover : MonoBehaviour
         water.gameObject.SetActive(false);
         CurrentNumLvl.text = (SceneManager.GetActiveScene().buildIndex).ToString();
         NextNumLvl.text = (SceneManager.GetActiveScene().buildIndex + 1).ToString();
+        CoinTXT.text = PlayerPrefs.GetInt("Coin").ToString();
     }
     // Start is called before the first frame update
     void Start()
@@ -57,7 +61,7 @@ public class AgentMover : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Agent.destination = targets[0].position;
         ActiveCollider();
-        Debug.Log(SkinManager.EquipedSkin.gameObject.name + ":name");
+        FireTxt.text =("/ "+ NumAllFire.ToString());
         thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
         if (!thisSkin.GetComponent<Animator>())
         {
@@ -70,6 +74,7 @@ public class AgentMover : MonoBehaviour
         virtualcamera.LookAt = thisSkin.transform;
         virtualcamera.Follow = thisSkin.transform;
         TargetCount = targets.Count;
+
     }
     void ActiveCollider()
     {
@@ -182,5 +187,17 @@ public class AgentMover : MonoBehaviour
         }
         lvlImageField.fillAmount += 1f/TargetCount;
         ProgressArrow.anchoredPosition = new Vector3((lvlImageField.fillAmount * ((560f) / 1)), 0, 0);
+    }
+    public void UpgradeCoin(int amount)
+    {
+            int money = PlayerPrefs.GetInt("Coin", (PlayerPrefs.GetInt("Coin"))) + amount;
+            PlayerPrefs.SetInt("Coin", money);
+            CoinTXT.text = money.ToString();
+            updateFire();
+    }
+    void updateFire()
+    {
+        NumAllFire--;
+        FireTxt.text = ("/ " + NumAllFire.ToString());
     }
 }
