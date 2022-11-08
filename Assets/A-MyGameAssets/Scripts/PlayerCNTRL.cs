@@ -58,6 +58,7 @@ public class PlayerCNTRL : MonoBehaviour
 
     public Animator anim;
     [SerializeField] private bool isWin;
+    public GameObject winPanel;
     public bool isGrounded;
     public float RayDistance;
     public LayerMask GroundLayer;
@@ -250,6 +251,7 @@ public class PlayerCNTRL : MonoBehaviour
         CheckDirection();
         if (isWin)
         {
+            
             anim.SetTrigger("Win");
             if (canMoveRight)
             {
@@ -259,10 +261,12 @@ public class PlayerCNTRL : MonoBehaviour
             forwardSpeed = Mathf.Lerp(forwardSpeed, 0,  Time.fixedDeltaTime);
             if (forwardSpeed <= 0.1f)
             {
+                winPanel.SetActive(true);
+                
                 isWin = false;
-                if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
-                    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
+                //    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
         #region Commentent for Swipe
