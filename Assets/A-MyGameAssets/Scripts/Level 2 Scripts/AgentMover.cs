@@ -40,6 +40,7 @@ public class AgentMover : MonoBehaviour
     public TextMeshProUGUI NextNumLvl;
     public Image lvlImageField;
     int TargetCount;
+    public RectTransform ProgressArrow;
     private void Awake()
     {
         Instance = this;
@@ -180,5 +181,6 @@ public class AgentMover : MonoBehaviour
 
         }
         lvlImageField.fillAmount += 1f/TargetCount;
+        ProgressArrow.anchoredPosition = new Vector3((lvlImageField.fillAmount * ((560f) / 1)), 0, 0);
     }
 }
