@@ -99,7 +99,7 @@ public class PlayerCNTRL : MonoBehaviour
         direction.z = forwardSpeed;
         anim = GetComponentInChildren<Animator>();
         anim.applyRootMotion = false;
-
+        moneyText.text = PlayerPrefs.GetInt("Coin").ToString();
     }
     public void SwipeDetector_OnSwipe(SwipeData SD)
     {
