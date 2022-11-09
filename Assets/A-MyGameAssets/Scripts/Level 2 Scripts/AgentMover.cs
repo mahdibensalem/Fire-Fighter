@@ -45,6 +45,7 @@ public class AgentMover : MonoBehaviour
     public TextMeshProUGUI CoinTXT;
     public TextMeshProUGUI FireTxt;
     public int NumAllFire;
+    public GameObject nozzle;
     private void Awake()
     {
         Instance = this;
@@ -74,7 +75,9 @@ public class AgentMover : MonoBehaviour
         virtualcamera.LookAt = thisSkin.transform;
         virtualcamera.Follow = thisSkin.transform;
         TargetCount = targets.Count;
-
+        GameObject myhand = thisSkin.GetComponent<myHand>().my_hand;
+        nozzle.transform.parent = myhand.transform;
+        nozzle.transform.localPosition = Vector3.zero;
     }
     void ActiveCollider()
     {
