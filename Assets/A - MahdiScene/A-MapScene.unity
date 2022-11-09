@@ -5073,7 +5073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &880091224796590446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5086,8 +5086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218bfac77df820642a1d7c98af66dc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundOnIcon: {fileID: 880091224450823717}
-  soundOffIcon: {fileID: 880091224228187316}
+  soundOnIcon: {fileID: 0}
+  soundOffIcon: {fileID: 0}
   muted: 0
 --- !u!224 &880091224796590447
 RectTransform:
@@ -5322,7 +5322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07af79342f58e4448ee65d51795c639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoney: 9999
+  playerMoney: 0
   MoneyTXT: {fileID: 4774638002085386072}
 --- !u!1 &2809054340731500617
 GameObject:

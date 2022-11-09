@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        img.localScale = Vector2.zero;
+        //img.localScale = Vector2.zero;
     }
     public void ExpandX()
     {
@@ -50,6 +50,14 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+    }
+    public void Pause()
+    {
+        Time.timeScale = 0;
     }
 
 }

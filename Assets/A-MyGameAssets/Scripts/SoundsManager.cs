@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SoundsManager : MonoBehaviour
 {
-    [SerializeField] Image soundOnIcon;
-    [SerializeField] Image soundOffIcon;
+    [SerializeField] GameObject soundOnIcon;
+    [SerializeField] GameObject soundOffIcon;
     public bool muted = false;
 
     // Start is called before the first frame update
@@ -40,13 +40,13 @@ public class SoundsManager : MonoBehaviour
     {
         if (muted == false)
         {
-            soundOnIcon.enabled = true;
-            soundOffIcon.enabled = false;
+            soundOnIcon.SetActive(true);
+            soundOffIcon.SetActive(false);
         }
         else
         {
-            soundOnIcon.enabled = false;
-            soundOffIcon.enabled = true;
+            soundOnIcon.SetActive(false);
+            soundOffIcon.SetActive(true);
         }
     }
     private void Load()
