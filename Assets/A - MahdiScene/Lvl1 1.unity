@@ -13119,8 +13119,16 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1849108099269948502, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849108099269948502, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849108099269948502, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1849108099269948503, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
       propertyPath: m_Pivot.x
