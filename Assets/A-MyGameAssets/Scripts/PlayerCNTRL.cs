@@ -264,8 +264,8 @@ public class PlayerCNTRL : MonoBehaviour
                 winPanel.SetActive(true);
                 
                 isWin = false;
-                //if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
-                //    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
+                if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
+                    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

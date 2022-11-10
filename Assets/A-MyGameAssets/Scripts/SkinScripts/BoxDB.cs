@@ -16,6 +16,8 @@ public class BoxDB : ScriptableObject
 
     [SerializeField] private int skinPrice;
     public int _skinPrice { get { return skinPrice; } }
+    [SerializeField] private Sprite PriceImage;
+    public Sprite _PriceImage { get { return PriceImage; } }
 
     //public GameObject[] abilities;
 

@@ -1,7 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.UI;
 
 public class SkinManager : MonoBehaviour
@@ -16,21 +15,20 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private Transform skinsInShopPanelsParent;
     [SerializeField] private List<SkinInShop> skinsInshopPanels = new List<SkinInShop>();
 
-    private Button currentlyEquippedSkinButton;
-     private void Awake()
+    [SerializeField] private Button currentlyEquippedSkinButton;
+    private void Awake()
     {
         Instance = this;
         foreach (Transform s in skinsInShopPanelsParent)
         {
             if (s.TryGetComponent(out SkinInShop skinInShop))
-            skinsInshopPanels.Add(skinInShop);
+                skinsInshopPanels.Add(skinInShop);
         }
         EquipPreviousSkin();
 
-
         SkinInShop skinEquipedPanel = Array.Find(skinsInshopPanels.ToArray(), dunnyFind => dunnyFind._BoxInfo._skinModel == EquipedSkin);
         currentlyEquippedSkinButton = skinEquipedPanel.GetComponentInChildren<Button>();
-        currentlyEquippedSkinButton.interactable = false;
+        currentlyEquippedSkinButton.interactable = true;//kénet false
     }
     private void EquipPreviousSkin()
     {
@@ -44,10 +42,14 @@ public class SkinManager : MonoBehaviour
         EquipedSkin = skinInfoInshop._BoxInfo._skinModel;
         //EquipedAbilities = skinInfoInshop._BoxInfo.abilities;
         PlayerPrefs.SetInt("skinPref", skinInfoInshop._BoxInfo._skinId);
-        if(currentlyEquippedSkinButton!= null)
-        currentlyEquippedSkinButton.interactable = true;
+        if (currentlyEquippedSkinButton != null)
+        {
+            currentlyEquippedSkinButton.interactable = true;
+            currentlyEquippedSkinButton.GetComponent<Image>().sprite = currentlyEquippedSkinButton.GetComponentInParent<SkinInShop>().equipe;
+        }
 
         currentlyEquippedSkinButton = skinInfoInshop.GetComponentInChildren<Button>();
-        currentlyEquippedSkinButton.interactable = false;
+        currentlyEquippedSkinButton.interactable = true;//kénet false
+        currentlyEquippedSkinButton.GetComponent<Image>().sprite = skinInfoInshop.equiped;
     }
 }

@@ -14,8 +14,6 @@ public class NextLevelButton : MonoBehaviour
     void TaskOnClick()
     {
         int activeScene = SceneManager.GetActiveScene().buildIndex;
-       if ((activeScene) >= (PlayerPrefs.GetInt("LVL")))
-                            PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene(activeScene + 1);
     }
 }

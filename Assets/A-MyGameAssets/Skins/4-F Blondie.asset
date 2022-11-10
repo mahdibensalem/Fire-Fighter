@@ -15,4 +15,5 @@ MonoBehaviour:
   skinId: 4
   skinModel: {fileID: 4437352894051783175, guid: 5328493f0a3f78a40ae9fc4e55a5d2ad, type: 3}
   skinSprite: {fileID: 21300000, guid: 4660e91a0e88b7f4da7e40d9111cfa29, type: 3}
-  skinPrice: 1500
+  skinPrice: 2025
+  PriceImage: {fileID: 21300000, guid: 364446c461d493740b8e32c0c335288c, type: 3}

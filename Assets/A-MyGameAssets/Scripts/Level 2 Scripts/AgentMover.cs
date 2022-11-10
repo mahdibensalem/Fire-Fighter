@@ -129,7 +129,7 @@ public class AgentMover : MonoBehaviour
                         //thisSkin.transform.rotation = Quaternion.Slerp(thisSkin.transform.rotation, rotation, Time.deltaTime * speedLerpRotation);
 
                         Vector3 target = new Vector3(aim.transform.position.x, transform.position.y, aim.transform.position.z);
-                        water.transform.rotation = rotation;
+                        //water.transform.rotation = rotation;
                         transform.LookAt(target);
                         if (Physics.Raycast(ray, out hit))
                         {

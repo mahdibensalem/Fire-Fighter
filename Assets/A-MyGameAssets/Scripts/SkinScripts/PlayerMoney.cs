@@ -7,7 +7,7 @@ public class PlayerMoney : MonoBehaviour
     public static PlayerMoney Instance;
 
     [SerializeField] private int playerMoney;//SFD
-    public TextMeshProUGUI MoneyTXT;
+    public TextMeshProUGUI[] MoneyTXT=new TextMeshProUGUI[2];
 
     private const string prefMoney = "Coin";
 
@@ -15,7 +15,7 @@ public class PlayerMoney : MonoBehaviour
     {
         Instance = this;
 
-        playerMoney = PlayerPrefs.GetInt(prefMoney);
+        playerMoney = PlayerPrefs.GetInt(prefMoney,playerMoney);
         UpdateCoinsText();
     }
 
@@ -35,8 +35,8 @@ public class PlayerMoney : MonoBehaviour
     }
     void UpdateCoinsText()
     {
-
-        MoneyTXT.text = playerMoney.ToString();
+        foreach(TextMeshProUGUI txt in MoneyTXT)
+        txt.text = playerMoney.ToString();
     }
     public void BuyHealth(int value)
     {

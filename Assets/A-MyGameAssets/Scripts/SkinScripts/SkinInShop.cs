@@ -11,6 +11,8 @@ public class SkinInShop : MonoBehaviour
      public GameObject coinImage;
     [SerializeField] private bool isSkinUnlocked = false;
     [SerializeField] private bool isFreeSkin;
+    [SerializeField] private Image buyZone;
+    public Sprite equipe,equiped;
 
     void Awake()
     {
@@ -29,13 +31,16 @@ public class SkinInShop : MonoBehaviour
         if (PlayerPrefs.GetInt(BoxInfo._skinId.ToString()) == 1)
         {
             isSkinUnlocked = true;
-            coinImage.SetActive(false);
-            buttonText.text = "Equip";
+            //coinImage.SetActive(false);
+            //buyZone.sprite = equiped;
+            //buttonText.text = "Equip";
         }
         else
         {
-            buttonText.text = BoxInfo._skinPrice.ToString();
-            coinImage.SetActive(true);
+            buyZone.sprite = BoxInfo._PriceImage;
+
+            //buttonText.text = BoxInfo._skinPrice.ToString();
+            //coinImage.SetActive(true);
         }
     }
 
@@ -46,6 +51,7 @@ public class SkinInShop : MonoBehaviour
         {
             //equip
             SkinManager.Instance.EquipSkin(this);
+            //buyZone.sprite = equiped;
         }
         else
         {
@@ -54,14 +60,22 @@ public class SkinInShop : MonoBehaviour
             {
                 isSkinUnlocked = true;
                 PlayerPrefs.SetInt(BoxInfo._skinId.ToString(), 1);
-                buttonText.text = "Equip";
-                coinImage.SetActive(false);
+
+                buyZone.sprite = equipe;
+
+                //buttonText.text = "Equip";
+                //coinImage.SetActive(false);
             }
             else
             {
-                buttonText.text =BoxInfo._skinPrice.ToString();
-                coinImage.SetActive(true);
+                buyZone.sprite = BoxInfo._PriceImage;
+                //buttonText.text =BoxInfo._skinPrice.ToString();
+                //coinImage.SetActive(true);
             };
         }
+    }
+    public void Equipe()
+    {
+        buyZone.sprite = equipe;
     }
 }
