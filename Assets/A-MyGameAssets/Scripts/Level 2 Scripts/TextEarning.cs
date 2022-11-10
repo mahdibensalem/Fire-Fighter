@@ -19,7 +19,7 @@ public class TextEarning : MonoBehaviour
     {
 
         scale = Mathf.Lerp(scale, maxScale, speed* Time.deltaTime);
-        transform.localScale = new Vector3(scale, scale, scale);
+        transform.localScale = new Vector3(-scale,scale,scale);
 
     }
 }

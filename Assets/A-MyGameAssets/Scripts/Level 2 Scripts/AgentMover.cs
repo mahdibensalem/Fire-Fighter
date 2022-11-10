@@ -40,12 +40,22 @@ public class AgentMover : MonoBehaviour
     public TextMeshProUGUI NextNumLvl;
     public Image lvlImageField;
     public GameObject winPanel;
+    public GameObject losePanel;
     int TargetCount;
     public RectTransform ProgressArrow;
     public TextMeshProUGUI CoinTXT;
     public TextMeshProUGUI FireTxt;
     public int NumAllFire;
     public GameObject nozzle;
+
+    [Header("Time Variables")]
+    public TextMeshProUGUI TimerText;
+    public float timeValue = 90f;
+    public Color fontColor;
+    public bool showMillSeconds;
+    public bool pauseTime = false;
+    float _timevalue;
+
     private void Awake()
     {
         Instance = this;
@@ -78,6 +88,32 @@ public class AgentMover : MonoBehaviour
         GameObject myhand = thisSkin.GetComponent<myHand>().my_hand;
         nozzle.transform.parent = myhand.transform;
         nozzle.transform.localPosition = Vector3.zero;
+
+        #region For Time 
+        TimerText.color = fontColor;
+        _timevalue = timeValue;
+        timeZero();
+        displayTime(timeValue);
+        #endregion
+
+    }
+    void displayTime(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        float milliSeeconds = timeToDisplay % 1 * 1000;
+        if (showMillSeconds)
+            TimerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeeconds);
+        else
+            TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void timeZero()
+    {
+        if (showMillSeconds)
+            TimerText.text = "00:00:000";
+        else
+            TimerText.text = "00:00";
     }
     void ActiveCollider()
     {
@@ -164,9 +200,34 @@ public class AgentMover : MonoBehaviour
         //else rotation = Quaternion.Euler(Vector3.zero);
         Anim.SetFloat("Speed", Agent.velocity.sqrMagnitude / 25);
 
+
+        ///// Timee
+        if (!pauseTime)
+        {
+
+            if (timeValue > 0)
+            {
+                timeValue -= Time.deltaTime;
+                displayTime(timeValue);
+            }
+        }
+        if (timeValue <= 0)
+        {
+            TimerText.text = "00:00:000";
+            timeValue = 0;
+            Debug.Log("you lose");
+            //StartCoroutine(waitToshowLosePanel(1f));
+            VendCam.SetActive(true);
+            water.SetActive(false);
+            losePanel.SetActive(true);
+            Anim.SetBool("Lose", true);
+            GetComponent<AgentMover>().enabled = false;
+        }
+
     }
     IEnumerator  ActiveWinPanel (float time)
     {
+        pauseTime = true;
         yield return  new WaitForSeconds(time);
         winPanel.SetActive(true);
     }

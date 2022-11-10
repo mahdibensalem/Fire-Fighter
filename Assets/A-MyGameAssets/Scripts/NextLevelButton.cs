@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class NextLevelButton : MonoBehaviour
 {
     Button m_button;
