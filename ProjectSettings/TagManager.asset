@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - WBL
   - Fire
+  - LF
   layers:
   - Default
   - TransparentFX

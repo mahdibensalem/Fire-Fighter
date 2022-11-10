@@ -18,6 +18,7 @@ public class healthFire : MonoBehaviour
     {
         StartHealth = health;
         StartIntensities = fireParticleSystems.emission.rateOverTime.constant;
+        
     }
     private void Update()
     {
@@ -32,6 +33,7 @@ public class healthFire : MonoBehaviour
             Destroy(transform.GetChild(1).gameObject);
             Destroy(gameObject, 2);
             ended = false;
+            SpawnFireBall.Instance.SpawnFire();
         }
         healthTXT.text = health.ToString();
 
@@ -47,5 +49,13 @@ public class healthFire : MonoBehaviour
             var emission = fireParticleSystems.emission;
             emission.rateOverTime = ((1/StartHealth)*health)*StartIntensities;
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("LF"))
+        {
+            SpawnFireBall.Instance.SpawnFire();
+            Destroy(gameObject);
+        }
     }
 }
