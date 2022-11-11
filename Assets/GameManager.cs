@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public float waterCollect;
     public float ValueWaterCollection;
     public Image waterBar;
+    public TextMeshProUGUI waterTXT;
+    public GameObject waterCheck;
 
 
     [Header("Lvl Progress UI")]
@@ -44,8 +46,15 @@ public class GameManager : MonoBehaviour
     }
     public void OnFilldWaterBar()
     {
-        waterCollect+= ValueWaterCollection;
-        waterBar.fillAmount = waterCollect;
+        waterCollect--;
+        if (waterCollect == 0)
+        {
+            waterCheck.SetActive(true);
+            waterTXT.gameObject.SetActive(false);
+        }
+        waterTXT.text = waterCollect.ToString();
+        
+        //waterBar.fillAmount = waterCollect;
     }
     public void OnLose()
     {

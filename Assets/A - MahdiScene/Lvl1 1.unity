@@ -759,9 +759,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LosePanel: {fileID: 1345771287}
-  waterCollect: 0
+  waterCollect: 3
   ValueWaterCollection: 0.7
   waterBar: {fileID: 956665820}
+  waterTXT: {fileID: 1028717719}
+  waterCheck: {fileID: 1849108097452003597}
   player: {fileID: 580959261319507833}
   WinObject: {fileID: 1283436932}
   CurrentNumLvl: {fileID: 8860106729261039849}
@@ -6009,6 +6011,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972479857}
   m_Mesh: {fileID: -5216581434543980006, guid: 203b5f5ac92810b42a981320f0a5fe00, type: 3}
+--- !u!114 &1028717719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7159657036703303499, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+  m_PrefabInstance: {fileID: 1849108097452003596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1049014586
 GameObject:
   m_ObjectHideFlags: 0
@@ -13594,6 +13607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+--- !u!1 &1849108097452003597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1970101548678047337, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+  m_PrefabInstance: {fileID: 1849108097452003596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1849813251215844198
 GameObject:
   m_ObjectHideFlags: 0
