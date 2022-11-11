@@ -2106,10 +2106,10 @@ Transform:
   - {fileID: 869738139}
   - {fileID: 939775183}
   - {fileID: 1228047049}
-  - {fileID: 777225320}
-  - {fileID: 855384242}
   - {fileID: 804032192}
+  - {fileID: 777225320}
   - {fileID: 2071273685}
+  - {fileID: 855384242}
   m_Father: {fileID: 137183848760752139}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10830,6 +10830,34 @@ PrefabInstance:
     - target: {fileID: 1849108099269948507, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
       propertyPath: m_Name
       value: Canvas (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034463832510362518, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076426060414370535, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 54.999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076426060414370535, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -107.49999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076426060815002449, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076426060815002449, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71da97c91155fde419a1779b2bc2c89d, type: 3}
+    - target: {fileID: 8076426060815002461, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076426061032107660, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
