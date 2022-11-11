@@ -13,15 +13,12 @@ public class WaterPrefab : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fire"))
         {
-            Debug.Log("aaezrazer");
             other.GetComponent<healthFire>().TakeDamage(damage);
             gameObject.SetActive(false);
         }
         else
         if (other.CompareTag("WBL"))
         {//**water ball collider limite**//))
-            Debug.Log("aaezrazer");
-
             gameObject.SetActive(false);
         }
     }
