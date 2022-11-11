@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class SpawnFireBall : MonoBehaviour
 {
     static public SpawnFireBall Instance;
     [SerializeField] private GameObject fireBall,WholeIsland;
     public int fireDestroyed=5;
+    [SerializeField] TextMeshProUGUI coinTxt;
+    [SerializeField] int amount;
     void Awake()
     {
         Instance = this;
+        coinTxt.text = PlayerPrefs.GetInt("Coin").ToString();
     }
     public void SpawnFire()
     {
@@ -26,5 +29,10 @@ public class SpawnFireBall : MonoBehaviour
         }
 
     }
-
+    public void UpdateCoins()
+    {
+        int money = PlayerPrefs.GetInt("Coin", (PlayerPrefs.GetInt("Coin"))) + amount;
+        PlayerPrefs.SetInt("Coin", money);
+        coinTxt.text = money.ToString();
+    }
 }

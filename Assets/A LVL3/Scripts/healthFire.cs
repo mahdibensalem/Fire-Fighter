@@ -28,6 +28,7 @@ public class healthFire : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             health = 0;
             SpawnFireBall.Instance.fireDestroyed--;
+            SpawnFireBall.Instance.UpdateCoins();
             Destroy(ball);
             Instantiate(BrokenBall,gameObject.transform);
             Destroy(transform.GetChild(0).gameObject);
