@@ -3,7 +3,12 @@ guid: 22f11ea26c594ac4c85dc83878f9d20f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: extinguisherTexture
+    second: {fileID: 2100000, guid: e087c6741a8ad4945af56f4638122ed8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
