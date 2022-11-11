@@ -25,8 +25,9 @@ public class healthFire : MonoBehaviour
         
         if (health <= 0 && ended)
         {
-            health = 0;
             GetComponent<Collider>().enabled = false;
+            health = 0;
+            SpawnFireBall.Instance.fireDestroyed--;
             Destroy(ball);
             Instantiate(BrokenBall,gameObject.transform);
             Destroy(transform.GetChild(0).gameObject);
