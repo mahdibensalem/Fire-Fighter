@@ -22,13 +22,12 @@ public class SpawnFireBall : MonoBehaviour
     private void Start()
     {
         UpdateFireTXT();
-
         _firedestroyed = fireDestroyed;
     }
     public void SpawnFire()
     {
         GameObject go=Instantiate(fireBall, WholeIsland.transform);
-        go.transform.position = new Vector3(transform.position.x, 13f,Random.Range(-36f,-41f));
+        go.transform.position = new Vector3(transform.position.x, 12f,Random.Range(-36f,-41f));
     }
     private void LateUpdate()
     {
