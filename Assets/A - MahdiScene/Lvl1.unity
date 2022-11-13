@@ -761,7 +761,6 @@ MonoBehaviour:
   LosePanel: {fileID: 1345771287}
   waterCollect: 3
   ValueWaterCollection: 0.7
-  waterBar: {fileID: 956665820}
   waterTXT: {fileID: 1028717719}
   waterCheck: {fileID: 1849108097452003597}
   player: {fileID: 580959261319507833}
@@ -5307,17 +5306,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956665820 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1849108098374524624, guid: 1bf020c68d03a9a478d5af67b53b795a, type: 3}
-  m_PrefabInstance: {fileID: 1849108097452003596}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &966892399
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,7 +5369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966892399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: 22.782, z: 42.07}
+  m_LocalPosition: {x: -24, y: 25.099998, z: 118.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8927,7 +8915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980773194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: 22.782, z: 42.07}
+  m_LocalPosition: {x: -24, y: 25.099998, z: 118.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10034,7 +10022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580959261319507833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: 18.582, z: 47.07}
+  m_LocalPosition: {x: -24, y: 20.9, z: 123.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16072,6 +16060,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1949616503569603038, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1591
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949616503569603038, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1591
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949616503569603038, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1591
+      objectReference: {fileID: 0}
     - target: {fileID: 7167074828120967883, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
       propertyPath: m_RootOrder
       value: 6
