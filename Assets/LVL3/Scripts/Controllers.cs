@@ -6,7 +6,7 @@ public class Controllers : MonoBehaviour
 
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject planeMVT;
-    Animator anim;
+    public Animator anim;
     public RuntimeAnimatorController AnimationClipLVL3;
     Vector2 firstFingerDown, SecondFingerDown;
     float PosX;
@@ -52,4 +52,5 @@ public class Controllers : MonoBehaviour
 
         }
     }
+    
 }

@@ -12,6 +12,7 @@ public class SpawnFireBall : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinTxt,FireTxt;
     [SerializeField] Image LvlProgressImg;
     [SerializeField] int amount;
+    [SerializeField] GameObject spawnWater;
 
     void Awake()
     {
@@ -35,6 +36,8 @@ public class SpawnFireBall : MonoBehaviour
         {
             // You  Win
             WholeIsland.GetComponent<PlaneMvmt>().speed = 0;
+            GetComponentInParent<Controllers>().anim.SetTrigger("Win");
+            spawnWater.SetActive(false);
             winPanel.SetActive(true);
         }
 

@@ -2561,7 +2561,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400348815}
   - component: {fileID: 400348817}
-  - component: {fileID: 400348816}
   - component: {fileID: 400348818}
   m_Layer: 0
   m_Name: Player
@@ -2589,20 +2588,6 @@ Transform:
   m_Father: {fileID: 316427715}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &400348816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400348811}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ffbe6731af1e4b49869127695f4b94c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WaterBallGO: {fileID: 2918810872123076585, guid: 54e4fe2b29667994ba423d7beca81342, type: 3}
-  spawnTimer: 0.2
 --- !u!114 &400348817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2616,6 +2601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   losePanel: {fileID: 3034463832804248455}
+  planeMVT: {fileID: 343998567}
+  anim: {fileID: 0}
   AnimationClipLVL3: {fileID: 9100000, guid: 1d3c7495144c4494894e5a7747e1c60c, type: 2}
 --- !u!136 &400348818
 CapsuleCollider:
@@ -2678,11 +2665,12 @@ MonoBehaviour:
   fireBall: {fileID: 5435340810944297467, guid: 702e43be59e54324780279f0949abe82, type: 3}
   WholeIsland: {fileID: 343998567}
   winPanel: {fileID: 8076426060723066525}
-  fireDestroyed: 5
+  fireDestroyed: 2
   coinTxt: {fileID: 7159657037385534730}
   FireTxt: {fileID: 7159657036409356122}
   LvlProgressImg: {fileID: 7159657037121366264}
   amount: 5
+  spawnWater: {fileID: 556728186}
 --- !u!1 &406250311
 GameObject:
   m_ObjectHideFlags: 0
