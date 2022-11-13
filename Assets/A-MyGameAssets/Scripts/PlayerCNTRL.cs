@@ -7,6 +7,7 @@ public class PlayerCNTRL : MonoBehaviour
 {
     [SerializeField] float queuJump = 0.5f;
     [SerializeField] bool readyToJump = false;
+    [SerializeField] GameObject confetti;
     public GameObject myInitialSkin;
     [Header("controller")]
     public static PlayerCNTRL Instance;
@@ -253,6 +254,7 @@ public class PlayerCNTRL : MonoBehaviour
         {
             
             anim.SetTrigger("Win");
+            confetti.SetActive(true);
             if (canMoveRight)
             {
                 _speedMoveX = speedMoveX;
