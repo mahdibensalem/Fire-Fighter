@@ -5,12 +5,17 @@ public class Controllers : MonoBehaviour
 {
 
     [SerializeField] GameObject losePanel;
+    [SerializeField] GameObject planeMVT;
+    Animator anim;
+    public RuntimeAnimatorController AnimationClipLVL3;
     Vector2 firstFingerDown, SecondFingerDown;
     float PosX;
     float dis;
     private void Awake()
     {
-        Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+       GameObject player= Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+        anim = player.transform.GetComponent<Animator>();
+        anim.runtimeAnimatorController = AnimationClipLVL3;
     }
     void FixedUpdate()
     {
@@ -41,7 +46,10 @@ public class Controllers : MonoBehaviour
         {
             // you lose
             losePanel.SetActive(true);
+            anim.SetBool("Lose", true);
+            planeMVT.GetComponent<PlaneMvmt>().speed = 0;
             GetComponent<SpawnWaterBalls>().enabled = false;
+
         }
     }
 }
