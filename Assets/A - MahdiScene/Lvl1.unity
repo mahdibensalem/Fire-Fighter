@@ -5369,7 +5369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966892399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: 22.782, z: 42.07}
+  m_LocalPosition: {x: -24, y: 25.099998, z: 118.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6890,7 +6890,7 @@ Transform:
   m_GameObject: {fileID: 1283436932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 227.68285, y: 6.1776485, z: 125.67429}
-  m_LocalScale: {x: 5.74, y: 3.69, z: 1.32}
+  m_LocalScale: {x: 3.4232297, y: 3.69, z: 1.32}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 137183848760752139}
@@ -8915,7 +8915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980773194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: 22.782, z: 42.07}
+  m_LocalPosition: {x: -24, y: 25.099998, z: 118.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10022,7 +10022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580959261319507833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: 18.582, z: 47.07}
+  m_LocalPosition: {x: -24, y: 20.9, z: 123.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16060,6 +16060,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1949616503569603038, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1591
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949616503569603038, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1591
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949616503569603038, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1591
+      objectReference: {fileID: 0}
     - target: {fileID: 7167074828120967883, guid: 41555733d6d0d0a489b68808bfabdee9, type: 3}
       propertyPath: m_RootOrder
       value: 6
