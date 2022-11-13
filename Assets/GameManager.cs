@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     [Header("Water")]
     public float waterCollect;
     public float ValueWaterCollection;
-    public Image waterBar;
     public TextMeshProUGUI waterTXT;
     public GameObject waterCheck;
 
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        waterBar.fillAmount = waterCollect;
+
         distance = Vector3.Distance(player.transform.position, WinObject.transform.position);
         CurrentNumLvl.text = SceneManager.GetActiveScene().buildIndex.ToString();
         NextNumLvl.text = (SceneManager.GetActiveScene().buildIndex+1).ToString();
