@@ -259,6 +259,6 @@ public class AgentMover : MonoBehaviour
     void updateFire()
     {
         NumAllFire--;
-        FireTxt.text = ("/ " + NumAllFire.ToString());
+        FireTxt.text = (NumAllFire.ToString());
     }
 }
