@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         distance = Vector3.Distance(player.transform.position, WinObject.transform.position);
         CurrentNumLvl.text = SceneManager.GetActiveScene().buildIndex.ToString();
         NextNumLvl.text = (SceneManager.GetActiveScene().buildIndex+1).ToString();
+        waterTXT.text = waterCollect.ToString();
     }
     private void LateUpdate()
     {
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         //ProgressArrow.position =  new Vector3((lvlImageProgress.fillAmount * ((560f)/1))-280f, 0, 0);
         ProgressArrow.anchoredPosition = new Vector3((lvlImageProgress.fillAmount * ((560f)/1)), 0, 0);
     }
-    public void OnFilldWaterBar()
+    public void UpgradeWaterCollect()
     {
         waterCollect--;
         if (waterCollect == 0)

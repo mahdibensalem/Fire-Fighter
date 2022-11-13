@@ -6,7 +6,7 @@ public class extinguish : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.OnFilldWaterBar();
+            GameManager.Instance.UpgradeWaterCollect();
             Destroy(gameObject);
         }
     }
