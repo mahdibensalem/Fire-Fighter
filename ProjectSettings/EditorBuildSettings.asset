@@ -20,4 +20,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/A - MahdiScene/Lvl4.unity
     guid: afdd8e8b047c14e44a7a41bb8734e035
+  - enabled: 1
+    path: Assets/A - MahdiScene/LVL5.unity
+    guid: e48156f81c58bef4bbe9b24d255332ff
+  - enabled: 1
+    path: Assets/A - MahdiScene/Lvl6.unity
+    guid: a56068f66f815834b8356c4bec5f853a
+  - enabled: 1
+    path: Assets/A - MahdiScene/Lvl7.unity
+    guid: 8a614dc2baa3823419953e1c416d3791
+  - enabled: 1
+    path: Assets/A - MahdiScene/LVL8.unity
+    guid: 8b048c19fe3e9f54594c8a9d86176630
+  - enabled: 1
+    path: Assets/A - MahdiScene/Lvl9.unity
+    guid: 606b5bf886866234987a246062c89429
   m_configObjects: {}
