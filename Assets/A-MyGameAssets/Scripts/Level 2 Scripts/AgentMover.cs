@@ -29,11 +29,8 @@ public class AgentMover : MonoBehaviour
     GameObject thisSkin;
     public RuntimeAnimatorController anim1;
     public Avatar avatar;
-    //Transform m_Target;
-    Quaternion rotation;
-    [Header("Water Bar")]
-    public Image waterBar;
-    public float speedLoseWater;
+
+
     bool canActiveColiders = true;
     [Header("Lvl Complete UI")]
     public TextMeshProUGUI CurrentNumLvl;
@@ -150,7 +147,7 @@ public class AgentMover : MonoBehaviour
                             VCam.SetActive(false);
                             canActiveColiders = false;
                         }
-                        waterBar.fillAmount -= speedLoseWater * Time.deltaTime;
+
                         //SR.enabled = true;
                         ///////
                         water.SetActive(true);
@@ -161,7 +158,7 @@ public class AgentMover : MonoBehaviour
                         }
 
 
-                        rotation = Quaternion.LookRotation(aim.transform.position - water.transform.position);
+
                         //thisSkin.transform.rotation = Quaternion.Slerp(thisSkin.transform.rotation, rotation, Time.deltaTime * speedLerpRotation);
 
                         Vector3 target = new Vector3(aim.transform.position.x, transform.position.y, aim.transform.position.z);
