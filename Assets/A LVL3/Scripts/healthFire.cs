@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class healthFire : MonoBehaviour
 {
 
@@ -14,6 +14,7 @@ public class healthFire : MonoBehaviour
     float currentIntensity ;
     [SerializeField] private float StartIntensities;
     [SerializeField] private ParticleSystem fireParticleSystems ;
+    [SerializeField] private Image healthBar;
     private void Awake()
     {
         StartHealth = health;
@@ -22,7 +23,6 @@ public class healthFire : MonoBehaviour
     }
     private void Update()
     {
-        
         if (health <= 0 && ended)
         {
             GetComponent<Collider>().enabled = false;
@@ -38,6 +38,7 @@ public class healthFire : MonoBehaviour
             SpawnFireBall.Instance.SpawnFire();
         }
         healthTXT.text = health.ToString();
+        healthBar.fillAmount = health / StartHealth;
 
     }
     public void TakeDamage(int amount)
