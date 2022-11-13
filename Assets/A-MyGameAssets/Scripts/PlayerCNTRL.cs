@@ -263,7 +263,6 @@ public class PlayerCNTRL : MonoBehaviour
             if (forwardSpeed <= 0.1f)
             {
                 winPanel.SetActive(true);
-                
                 isWin = false;
                 if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
                     PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
