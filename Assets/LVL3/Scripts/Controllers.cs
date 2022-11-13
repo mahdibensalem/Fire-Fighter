@@ -6,6 +6,7 @@ public class Controllers : MonoBehaviour
 
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject planeMVT;
+    [SerializeField] GameObject spawnWaterBall;
     public Animator anim;
     public RuntimeAnimatorController AnimationClipLVL3;
     Vector2 firstFingerDown, SecondFingerDown;
@@ -48,8 +49,7 @@ public class Controllers : MonoBehaviour
             losePanel.SetActive(true);
             anim.SetBool("Lose", true);
             planeMVT.GetComponent<PlaneMvmt>().speed = 0;
-            GetComponent<SpawnWaterBalls>().enabled = false;
-
+            spawnWaterBall.GetComponent<SpawnWaterBalls>().enabled = false;
         }
     }
     

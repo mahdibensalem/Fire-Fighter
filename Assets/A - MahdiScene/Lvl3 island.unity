@@ -671,6 +671,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2371793457840428084, guid: 702e43be59e54324780279f0949abe82, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2698160326320741600, guid: 702e43be59e54324780279f0949abe82, type: 3}
       propertyPath: m_SizeDelta.x
       value: 194.12
@@ -2770,6 +2774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   losePanel: {fileID: 3034463832804248455}
   planeMVT: {fileID: 343998567}
+  spawnWaterBall: {fileID: 556728186}
   anim: {fileID: 0}
   AnimationClipLVL3: {fileID: 9100000, guid: 1d3c7495144c4494894e5a7747e1c60c, type: 2}
 --- !u!136 &400348818
@@ -2811,7 +2816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405571044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.18999958, z: 141.40012}
+  m_LocalPosition: {x: 0, y: 0.18999958, z: 92.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3145,7 +3150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408887546}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 99, y: 16.441162, z: -37.75}
+  m_LocalPosition: {x: 106.15, y: 16.441162, z: -37.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
