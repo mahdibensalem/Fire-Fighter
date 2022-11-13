@@ -84,7 +84,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3013865614773981012}
-  m_Text: '+5
+  m_Text: '+5 sec
 
 '
   m_OffsetZ: 0
@@ -99,7 +99,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 4787f264b97ca3d4a896ff1d96ad4cd4, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278643187
 --- !u!114 &2253379733633869033
 MonoBehaviour:
   m_ObjectHideFlags: 0
