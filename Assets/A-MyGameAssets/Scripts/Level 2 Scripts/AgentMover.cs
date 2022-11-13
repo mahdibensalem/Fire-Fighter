@@ -69,7 +69,7 @@ public class AgentMover : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Agent.destination = targets[0].position;
         ActiveCollider();
-        FireTxt.text =("/ "+ NumAllFire.ToString());
+        FireTxt.text =( NumAllFire.ToString());
         thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
         if (!thisSkin.GetComponent<Animator>())
         {
