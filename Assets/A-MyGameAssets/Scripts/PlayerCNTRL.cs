@@ -257,8 +257,9 @@ public class PlayerCNTRL : MonoBehaviour
             {
                 _speedMoveX = speedMoveX;
                 canMoveRight = false;
+                canMoveLeft = false;
             }
-            forwardSpeed = Mathf.Lerp(forwardSpeed, 0,  Time.fixedDeltaTime);
+            forwardSpeed -=0.1f ;
             if (forwardSpeed <= 0.1f)
             {
                 winPanel.SetActive(true);
@@ -387,10 +388,12 @@ public class PlayerCNTRL : MonoBehaviour
     void CheckDirection()
     {
 
+
         if (transform.position.x != Mathf.Clamp(transform.position.x, LeftPosX, RightPosX))
         {
             _speedMoveX = 0;
         }
+
     }
     void slide()
     {
