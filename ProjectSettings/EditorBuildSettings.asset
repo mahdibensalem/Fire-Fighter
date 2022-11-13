@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/A - MahdiScene/A-MapScene.unity
     guid: 5e837f08b6feb2444b4571ce6c75c67b
-  - enabled: 1
+  - enabled: 0
     path: Assets/A - MahdiScene/Lvl1 1.unity
     guid: 7411a0761fd699a408971700981144c4
   - enabled: 0
     path: Assets/A-MyGameAssets/Scenes/Lvl1.unity
     guid: a77778196df301f49a8a9649b16c3381
-  - enabled: 1
+  - enabled: 0
     path: Assets/A - MahdiScene/LVL2.unity
     guid: be7da2d78e467814186fe24a4e542b91
-  - enabled: 1
+  - enabled: 0
     path: Assets/A - MahdiScene/Lvl3 island.unity
     guid: e5b1b4e662b4ac348947e30dcf38bce6
+  - enabled: 1
+    path: Assets/A - MahdiScene/Lvl4.unity
+    guid: afdd8e8b047c14e44a7a41bb8734e035
   m_configObjects: {}
