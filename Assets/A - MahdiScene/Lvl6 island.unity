@@ -2807,7 +2807,7 @@ MonoBehaviour:
   fireBall: {fileID: 5435340810944297467, guid: 702e43be59e54324780279f0949abe82, type: 3}
   WholeIsland: {fileID: 343998567}
   winPanel: {fileID: 8076426060723066525}
-  fireDestroyed: 3
+  fireDestroyed: 4
   coinTxt: {fileID: 7159657037385534730}
   FireTxt: {fileID: 7159657036409356122}
   LvlProgressImg: {fileID: 7159657037121366264}

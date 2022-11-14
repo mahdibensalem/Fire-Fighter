@@ -8,7 +8,7 @@ public class PlayerCNTRL : MonoBehaviour
     [SerializeField] float queuJump = 0.5f;
     [SerializeField] bool readyToJump = false;
     [SerializeField] GameObject confetti;
-    public GameObject myInitialSkin;
+    [SerializeField] GameObject NullGameObject;
     [Header("controller")]
     public static PlayerCNTRL Instance;
     CharacterController controller;
@@ -83,8 +83,8 @@ public class PlayerCNTRL : MonoBehaviour
         controller = GetComponent<CharacterController>();
         _speedMoveX = 0;
 
-
-        thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+        GameObject m_skin = SkinManager.EquipedSkin?.gameObject ?? NullGameObject;
+        thisSkin = Instantiate(m_skin, transform);
 
 
 

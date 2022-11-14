@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class AgentMover : MonoBehaviour
 {
+    [SerializeField] GameObject NullGameObject;
     Ray ray;
     Vector3 pos;
     public Camera mainCamera;
@@ -70,7 +71,8 @@ public class AgentMover : MonoBehaviour
         Agent.destination = targets[0].position;
         ActiveCollider();
         FireTxt.text =( NumAllFire.ToString());
-        thisSkin = Instantiate(SkinManager.EquipedSkin.gameObject, transform);
+        GameObject m_skin = SkinManager.EquipedSkin?.gameObject ?? NullGameObject;
+        thisSkin = Instantiate(m_skin, transform);
         if (!thisSkin.GetComponent<Animator>())
         {
             Anim = thisSkin.AddComponent<Animator>();
@@ -210,7 +212,7 @@ public class AgentMover : MonoBehaviour
         }
         if (timeValue <= 0)
         {
-            TimerText.text = "00:00:000";
+            TimerText.text = "00:00";
             timeValue = 0;
             Debug.Log("you lose");
             //StartCoroutine(waitToshowLosePanel(1f));

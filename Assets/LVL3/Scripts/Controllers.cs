@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Controllers : MonoBehaviour
 {
-
+    GameObject thisSkin;
+    [SerializeField] GameObject NullGameObject;
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject planeMVT;
     [SerializeField] GameObject spawnWaterBall;
@@ -14,8 +15,9 @@ public class Controllers : MonoBehaviour
     float dis;
     private void Awake()
     {
-       GameObject player= Instantiate(SkinManager.EquipedSkin.gameObject, transform);
-        anim = player.transform.GetComponent<Animator>();
+        GameObject m_skin = SkinManager.EquipedSkin?.gameObject ?? NullGameObject;
+        thisSkin = Instantiate(m_skin, transform);
+        anim = thisSkin.transform.GetComponent<Animator>();
         anim.runtimeAnimatorController = AnimationClipLVL3;
     }
     void FixedUpdate()
