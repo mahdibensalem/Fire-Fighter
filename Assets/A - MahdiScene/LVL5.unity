@@ -89751,7 +89751,7 @@ MonoBehaviour:
   NumAllFire: 6
   nozzle: {fileID: 1951439376812272136}
   TimerText: {fileID: 1991638130}
-  timeValue: 20
+  timeValue: 25
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   showMillSeconds: 0
   pauseTime: 0

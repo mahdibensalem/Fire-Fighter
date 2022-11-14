@@ -153986,7 +153986,7 @@ MonoBehaviour:
   NumAllFire: 8
   nozzle: {fileID: 7673887326504274246}
   TimerText: {fileID: 1195622538}
-  timeValue: 20
+  timeValue: 25
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   showMillSeconds: 0
   pauseTime: 0
