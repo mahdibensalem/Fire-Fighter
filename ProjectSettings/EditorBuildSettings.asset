@@ -25,7 +25,7 @@ EditorBuildSettings:
     guid: e48156f81c58bef4bbe9b24d255332ff
   - enabled: 1
     path: Assets/A - MahdiScene/Lvl6 island.unity
-    guid: 0de9199221cde2c4db4583fcd2dd0f57
+    guid: 38132e5d23f5b4b45be76479c3fa4315
   - enabled: 1
     path: Assets/A - MahdiScene/Lvl7.unity
     guid: 8a614dc2baa3823419953e1c416d3791
@@ -34,5 +34,5 @@ EditorBuildSettings:
     guid: b3939efeaaaf78b48bba022fbc495e01
   - enabled: 1
     path: Assets/A - MahdiScene/Lvl9 island.unity
-    guid: e44fd7e0937906b49862945833666d6f
+    guid: 3740f0d816b923a4588b4e90072f6bff
   m_configObjects: {}
