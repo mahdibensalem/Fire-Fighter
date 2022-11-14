@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.294
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 315136620}
-  m_IndirectSpecularColor: {r: 0.0001720632, g: 0.056525365, b: 1.038686, a: 0.294}
+  m_IndirectSpecularColor: {r: 0.00017223434, g: 0.056531835, b: 1.0386717, a: 0.294}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -463,8 +463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 533.98, y: -622.5}
-  m_SizeDelta: {x: 533.98, y: 622.5}
+  m_AnchoredPosition: {x: 510, y: -600}
+  m_SizeDelta: {x: 510, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &88895533
 MonoBehaviour:
@@ -1215,8 +1215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 533.98, y: 0}
-  m_SizeDelta: {x: 533.98, y: 622.5}
+  m_AnchoredPosition: {x: 510, y: 0}
+  m_SizeDelta: {x: 510, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &246759999
 MonoBehaviour:
@@ -7438,9 +7438,9 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 533.98, y: 622.5}
+  m_CellSize: {x: 510, y: 600}
   m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
+  m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!1 &1487655253
 GameObject:
@@ -10294,8 +10294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -622.5}
-  m_SizeDelta: {x: 533.98, y: 622.5}
+  m_AnchoredPosition: {x: 0, y: -600}
+  m_SizeDelta: {x: 510, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1967187127
 MonoBehaviour:
@@ -12230,7 +12230,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 533.98, y: 622.5}
+  m_SizeDelta: {x: 510, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &839973000939692216
 MonoBehaviour:
