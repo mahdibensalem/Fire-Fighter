@@ -89748,7 +89748,7 @@ MonoBehaviour:
   ProgressArrow: {fileID: 1991638136}
   CoinTXT: {fileID: 1991638132}
   FireTxt: {fileID: 1991638133}
-  NumAllFire: 8
+  NumAllFire: 6
   nozzle: {fileID: 1951439376812272136}
   TimerText: {fileID: 1991638130}
   timeValue: 20
