@@ -127,7 +127,6 @@ public class AgentMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(1f / 5f);
         RaycastHit hit;
         // Check if we've reached the destination
         if (!Agent.pathPending)
