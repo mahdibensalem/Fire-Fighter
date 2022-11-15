@@ -48,6 +48,12 @@ public class PlayerCNTRL : MonoBehaviour
 
     public SwipeDirection sd;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource coinSound;
+    [SerializeField] private AudioSource WinSound;
+    [SerializeField] private AudioSource LoseSound;
+    
+
     //Camera
     //public Transform cameraTransform;
     //public float speedLerpRotationCamera;
@@ -207,6 +213,7 @@ public class PlayerCNTRL : MonoBehaviour
         if (Physics.Raycast(ray, RayDistance + .5f, winLayer))
         {
             isWin = true;
+            WinSound.Play();
             GetComponent<SwipeDetector>().enabled = false;
             Debug.Log("winn");
             TinySauce.OnGameFinished(true, 0);
@@ -451,6 +458,7 @@ public class PlayerCNTRL : MonoBehaviour
         {
             forwardSpeed = 0;
             anim.SetTrigger("Lose");
+            LoseSound.Play();
             GetComponent<SwipeDetector>().enabled = false;
             vCam.Follow = null;
             vCam.LookAt = null;
@@ -458,6 +466,7 @@ public class PlayerCNTRL : MonoBehaviour
         }
         else if (other.gameObject.tag == ("Coin"))
         {
+            coinSound.Play();
             AddCoin(5);
             Destroy(other.gameObject);
         }

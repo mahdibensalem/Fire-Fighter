@@ -13,6 +13,7 @@ public class Controllers : MonoBehaviour
     Vector2 firstFingerDown, SecondFingerDown;
     float PosX;
     float dis;
+    [SerializeField] AudioSource LoseAudio;
     private void Awake()
     {
         GameObject m_skin = SkinManager.EquipedSkin?.gameObject ?? NullGameObject;
@@ -52,6 +53,7 @@ public class Controllers : MonoBehaviour
             anim.SetBool("Lose", true);
             planeMVT.GetComponent<PlaneMvmt>().speed = 0;
             spawnWaterBall.GetComponent<SpawnWaterBalls>().enabled = false;
+            LoseAudio.Play();
         }
     }
     

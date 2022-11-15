@@ -54,6 +54,10 @@ public class AgentMover : MonoBehaviour
     public bool pauseTime = false;
     float _timevalue;
 
+
+  [SerializeField] AudioSource fireGone;
+  [SerializeField] AudioSource WinAudio;
+  [SerializeField] AudioSource LoseAudio;
     private void Awake()
     {
         Instance = this;
@@ -185,7 +189,7 @@ public class AgentMover : MonoBehaviour
                     {
                         Anim.SetBool("Win", true);
                         VendCam.SetActive(true);
-
+                        WinAudio.Play();
                         if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
                             PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
                         StartCoroutine(ActiveWinPanel(2f));
@@ -219,6 +223,7 @@ public class AgentMover : MonoBehaviour
             water.SetActive(false);
             losePanel.SetActive(true);
             Anim.SetBool("Lose", true);
+            LoseAudio.Play();
             GetComponent<AgentMover>().enabled = false;
         }
 
@@ -256,6 +261,8 @@ public class AgentMover : MonoBehaviour
             PlayerPrefs.SetInt("Coin", money);
             CoinTXT.text = money.ToString();
             updateFire();
+        timeValue += 5f;
+        fireGone.Play();
     }
     void updateFire()
     {

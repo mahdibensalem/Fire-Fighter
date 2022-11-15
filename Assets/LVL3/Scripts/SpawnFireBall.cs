@@ -13,7 +13,7 @@ public class SpawnFireBall : MonoBehaviour
     [SerializeField] Image LvlProgressImg;
     [SerializeField] int amount;
     [SerializeField] GameObject spawnWater;
-
+    [SerializeField] AudioSource WinAudio;
     void Awake()
     {
         Instance = this;
@@ -35,6 +35,7 @@ public class SpawnFireBall : MonoBehaviour
         if (fireDestroyed == 0)
         {
             // You  Win
+            WinAudio.Play();
             WholeIsland.GetComponent<PlaneMvmt>().speed = 0;
             GetComponentInParent<Controllers>().anim.SetTrigger("Win");
             spawnWater.SetActive(false);

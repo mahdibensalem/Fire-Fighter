@@ -31,7 +31,6 @@ public class Fire : MonoBehaviour
         {
             isLit = false;
             AgentMover.Instance.UpgradeCoin(10);
-            AgentMover.Instance.timeValue += 5f;
            GameObject go = Instantiate(TextPrefab,transform.position,Quaternion.identity);
             go.transform.LookAt(Camera.main.transform);
             destroy();

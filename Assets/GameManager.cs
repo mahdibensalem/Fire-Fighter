@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public float ValueWaterCollection;
     public TextMeshProUGUI waterTXT;
     public GameObject waterCheck;
-
+    AudioSource extinguishSound;
 
     [Header("Lvl Progress UI")]
     [SerializeField]
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        extinguishSound=GetComponent<AudioSource>();
         Instance = this;
     }
     void Start()
@@ -46,6 +47,8 @@ public class GameManager : MonoBehaviour
     }
     public void UpgradeWaterCollect()
     {
+        extinguishSound.Play();
+
         waterCollect--;
         if (waterCollect == 0)
         {
