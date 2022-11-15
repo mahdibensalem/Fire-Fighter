@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 public class SpawnFireBall : MonoBehaviour
 {
     static public SpawnFireBall Instance;
-    [SerializeField] private GameObject fireBall,WholeIsland,winPanel;
-    public float fireDestroyed=5;
+
+    [SerializeField] private GameObject Confetti, fireBall, WholeIsland, winPanel;
+    public float fireDestroyed = 5;
     float _firedestroyed;
-    [SerializeField] TextMeshProUGUI coinTxt,FireTxt;
+    [SerializeField] TextMeshProUGUI coinTxt, FireTxt;
     [SerializeField] Image LvlProgressImg;
     [SerializeField] int amount;
     [SerializeField] GameObject spawnWater;
     [SerializeField] AudioSource WinAudio;
+    [SerializeField] AudioSource FireGoneAudio;
+    bool isWin = true;
     void Awake()
     {
         Instance = this;
@@ -27,19 +28,25 @@ public class SpawnFireBall : MonoBehaviour
     }
     public void SpawnFire()
     {
-        GameObject go=Instantiate(fireBall, WholeIsland.transform);
-        go.transform.position = new Vector3(transform.position.x, 12f,Random.Range(-36f,-41f));
+        GameObject go = Instantiate(fireBall, WholeIsland.transform);
+        go.transform.position = new Vector3(transform.position.x, 12f, Random.Range(-36f, -41f));
     }
     private void LateUpdate()
     {
         if (fireDestroyed == 0)
         {
-            // You  Win
-            WinAudio.Play();
-            WholeIsland.GetComponent<PlaneMvmt>().speed = 0;
-            GetComponentInParent<Controllers>().anim.SetTrigger("Win");
-            spawnWater.SetActive(false);
-            winPanel.SetActive(true);
+            if (isWin)
+            {
+                // You  Win
+                Confetti.SetActive(true);
+                WinAudio.Play();
+                WholeIsland.GetComponent<PlaneMvmt>().speed = 0;
+                GetComponentInParent<Controllers>().anim.SetBool("win", true);
+                spawnWater.SetActive(false);
+                winPanel.SetActive(true);
+                isWin = false;
+
+            }
         }
 
     }
@@ -48,17 +55,18 @@ public class SpawnFireBall : MonoBehaviour
         int money = PlayerPrefs.GetInt("Coin", (PlayerPrefs.GetInt("Coin"))) + amount;
         PlayerPrefs.SetInt("Coin", money);
         coinTxt.text = money.ToString();
+        FireGoneAudio.Play();
         UpdateFireTXT();
         LVLProgressImg();
     }
     void UpdateFireTXT()
     {
         FireTxt.text = fireDestroyed.ToString();
-            
+
     }
     void LVLProgressImg()
     {
 
-        LvlProgressImg.fillAmount +=1/_firedestroyed ;
+        LvlProgressImg.fillAmount += 1 / _firedestroyed;
     }
 }

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class AgentMover : MonoBehaviour
 {
+    [SerializeField] GameObject confetti;
     [SerializeField] GameObject NullGameObject;
     Ray ray;
     Vector3 pos;
@@ -54,6 +55,7 @@ public class AgentMover : MonoBehaviour
     public bool pauseTime = false;
     float _timevalue;
 
+    bool isWin=true;
 
   [SerializeField] AudioSource fireGone;
   [SerializeField] AudioSource WinAudio;
@@ -184,12 +186,18 @@ public class AgentMover : MonoBehaviour
                     }
                     else
                     {
-                        Anim.SetBool("Win", true);
-                        VendCam.SetActive(true);
-                        WinAudio.Play();
-                        if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
-                            PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
-                        StartCoroutine(ActiveWinPanel(2f));
+                        if (isWin)
+                        {
+                            confetti.SetActive(true);
+                            pauseTime = true;
+                            WinAudio.Play();
+                            Anim.SetBool("Win", true);
+                            VendCam.SetActive(true);
+                                if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
+                                PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
+                            StartCoroutine(ActiveWinPanel(2f));
+                            isWin = false;
+                        }
                     }
 
                     // Done
@@ -227,7 +235,6 @@ public class AgentMover : MonoBehaviour
     }
     IEnumerator  ActiveWinPanel (float time)
     {
-        pauseTime = true;
         yield return  new WaitForSeconds(time);
         winPanel.SetActive(true);
     }
