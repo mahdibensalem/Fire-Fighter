@@ -10,6 +10,7 @@ public class AgentMover : MonoBehaviour
 {
     [SerializeField] GameObject confetti;
     [SerializeField] GameObject NullGameObject;
+
     Ray ray;
     Vector3 pos;
     public Camera mainCamera;
@@ -44,6 +45,7 @@ public class AgentMover : MonoBehaviour
     public RectTransform ProgressArrow;
     public TextMeshProUGUI CoinTXT;
     public TextMeshProUGUI FireTxt;
+    [SerializeField] GameObject TickImg;
     public int NumAllFire;
     public GameObject nozzle;
 
@@ -272,5 +274,10 @@ public class AgentMover : MonoBehaviour
     {
         NumAllFire--;
         FireTxt.text = (NumAllFire.ToString());
+        if (NumAllFire == 0)
+        {
+            FireTxt.text = "";
+            TickImg.SetActive(true);
+        }
     }
 }

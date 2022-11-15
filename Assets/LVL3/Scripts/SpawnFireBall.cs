@@ -9,6 +9,7 @@ public class SpawnFireBall : MonoBehaviour
     public float fireDestroyed = 5;
     float _firedestroyed;
     [SerializeField] TextMeshProUGUI coinTxt, FireTxt;
+    [SerializeField] GameObject tick;
     [SerializeField] Image LvlProgressImg;
     [SerializeField] int amount;
     [SerializeField] GameObject spawnWater;
@@ -62,6 +63,11 @@ public class SpawnFireBall : MonoBehaviour
     void UpdateFireTXT()
     {
         FireTxt.text = fireDestroyed.ToString();
+        if (fireDestroyed == 0)
+        {
+            tick.SetActive(true);
+            FireTxt.text ="";
+        }
 
     }
     void LVLProgressImg()

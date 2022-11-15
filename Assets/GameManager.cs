@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         if (waterCollect == 0)
         {
             waterCheck.SetActive(true);
-            waterTXT.gameObject.SetActive(false);
+            waterTXT.text="";
         }
         waterTXT.text = waterCollect.ToString();
         

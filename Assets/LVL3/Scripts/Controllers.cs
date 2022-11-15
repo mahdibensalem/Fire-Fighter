@@ -1,9 +1,11 @@
 using UnityEngine;
-
-
+using TMPro;
+using UnityEngine.SceneManagement;
 public class Controllers : MonoBehaviour
 {
     GameObject thisSkin;
+    [SerializeField] TextMeshProUGUI CurrentNumLvl;
+    [SerializeField] TextMeshProUGUI NextNumLvl;
     [SerializeField] GameObject NullGameObject;
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject planeMVT;
@@ -20,6 +22,8 @@ public class Controllers : MonoBehaviour
         thisSkin = Instantiate(m_skin, transform);
         anim = thisSkin.transform.GetComponent<Animator>();
         anim.runtimeAnimatorController = AnimationClipLVL3;
+        CurrentNumLvl.text = (SceneManager.GetActiveScene().buildIndex).ToString();
+        NextNumLvl.text = (SceneManager.GetActiveScene().buildIndex + 1).ToString();
     }
     void FixedUpdate()
     {

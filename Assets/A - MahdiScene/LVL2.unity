@@ -135652,6 +135652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63ec78ac0ed737848b7c63264dde8682, type: 3}
+--- !u!1 &2046439264803731441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8588014504773070640, guid: 63ec78ac0ed737848b7c63264dde8682, type: 3}
+  m_PrefabInstance: {fileID: 2046439264803731440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2047570402205172998
 Transform:
   m_ObjectHideFlags: 0
@@ -143825,6 +143830,7 @@ MonoBehaviour:
   ProgressArrow: {fileID: 3496354261505282538}
   CoinTXT: {fileID: 3496354261756615975}
   FireTxt: {fileID: 3496354262191878007}
+  TickImg: {fileID: 2046439264803731441}
   NumAllFire: 8
   nozzle: {fileID: 7673887326504274246}
   TimerText: {fileID: 1195622538}

@@ -84206,6 +84206,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041295841}
   m_Mesh: {fileID: -8438231505339805718, guid: db29323f37db675409b8242e2af48054, type: 3}
+--- !u!1 &2046634553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8588014504773070640, guid: 63ec78ac0ed737848b7c63264dde8682, type: 3}
+  m_PrefabInstance: {fileID: 1991638128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2064331779
 GameObject:
   m_ObjectHideFlags: 0
@@ -89318,6 +89323,7 @@ MonoBehaviour:
   ProgressArrow: {fileID: 1991638136}
   CoinTXT: {fileID: 1991638132}
   FireTxt: {fileID: 1991638133}
+  TickImg: {fileID: 2046634553}
   NumAllFire: 6
   nozzle: {fileID: 1951439376812272136}
   TimerText: {fileID: 1991638130}
