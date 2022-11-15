@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.21568628, g: 0.85490197, b: 0.972549, a: 1}
+  m_FogColor: {r: 0.79607844, g: 0.40784314, b: 0.972549, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.1
   m_LinearFogStart: 42
@@ -10721,7 +10721,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f00ffcc37e3779a4c9bb7167c68922c5, type: 2}
+  - {fileID: 2100000, guid: 641b45f77f2db2044a2554d68fa0333c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22101,7 +22101,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f00ffcc37e3779a4c9bb7167c68922c5, type: 2}
+  - {fileID: 2100000, guid: 641b45f77f2db2044a2554d68fa0333c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22200,7 +22200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f00ffcc37e3779a4c9bb7167c68922c5, type: 2}
+  - {fileID: 2100000, guid: 641b45f77f2db2044a2554d68fa0333c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
