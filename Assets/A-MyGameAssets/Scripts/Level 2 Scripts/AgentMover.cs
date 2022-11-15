@@ -173,11 +173,8 @@ public class AgentMover : MonoBehaviour
                         {
                             if (Vector3.Distance(hit.point, transform.position) > 10)
                             {
-                                Debug.DrawRay(water.transform.position, water.transform.forward * 100, Color.black);
                                 if (hit.collider.TryGetComponent(out Fire fire))
                                 {
-                                    //transform.LookAt(aim.transform);
-
                                     fire.TryExtinguishing(.3f * Time.deltaTime);
                                 }
                                 aim.transform.position = hit.point;
