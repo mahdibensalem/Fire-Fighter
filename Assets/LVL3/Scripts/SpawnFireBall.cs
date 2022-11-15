@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class SpawnFireBall : MonoBehaviour
 {
     static public SpawnFireBall Instance;
@@ -45,6 +46,8 @@ public class SpawnFireBall : MonoBehaviour
                 GetComponentInParent<Controllers>().anim.SetBool("win", true);
                 spawnWater.SetActive(false);
                 winPanel.SetActive(true);
+                if ((SceneManager.GetActiveScene().buildIndex) >= (PlayerPrefs.GetInt("LVL")))
+                    PlayerPrefs.SetInt("LVL", SceneManager.GetActiveScene().buildIndex + 1);
                 isWin = false;
 
             }
