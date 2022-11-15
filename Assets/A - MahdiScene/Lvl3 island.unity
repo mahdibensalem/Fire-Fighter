@@ -2983,7 +2983,7 @@ MonoBehaviour:
   fireDestroyed: 3
   coinTxt: {fileID: 7159657037385534730}
   FireTxt: {fileID: 7159657036409356122}
-  tick: {fileID: 0}
+  tick: {fileID: 1065487948}
   LvlProgressImg: {fileID: 7159657037121366264}
   amount: 5
   spawnWater: {fileID: 556728186}
@@ -6279,6 +6279,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e94dcee7a827d9847aab932e77f9ef59, type: 3}
   m_PrefabInstance: {fileID: 1052219877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1065487948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6132254967659096749, guid: a0e49aadd13c3c540b352358754130ed, type: 3}
+  m_PrefabInstance: {fileID: 6847558634257476739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1065505454
 PrefabInstance:

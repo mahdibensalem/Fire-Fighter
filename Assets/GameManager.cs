@@ -50,12 +50,13 @@ public class GameManager : MonoBehaviour
         extinguishSound.Play();
 
         waterCollect--;
+        waterTXT.text = waterCollect.ToString();
         if (waterCollect == 0)
         {
             waterCheck.SetActive(true);
-            waterTXT.text="";
+            waterTXT.gameObject.SetActive(false);
         }
-        waterTXT.text = waterCollect.ToString();
+
         
         //waterBar.fillAmount = waterCollect;
     }
