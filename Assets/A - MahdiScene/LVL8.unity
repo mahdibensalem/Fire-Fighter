@@ -33,12 +33,12 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 512
+  m_DefaultReflectionResolution: 2048
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 0.294
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 315136620}
-  m_IndirectSpecularColor: {r: 0.00017197858, g: 0.05653421, b: 1.0386981, a: 0.294}
+  m_IndirectSpecularColor: {r: 0.00017228357, g: 0.056545787, b: 1.038686, a: 0.294}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
